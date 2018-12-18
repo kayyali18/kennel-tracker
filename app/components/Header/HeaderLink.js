@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
 export default styled(Link)`
   display: inline-flex;
@@ -27,4 +27,4 @@ export default styled(Link)`
     background: linear-gradient(#ff700b, #ff275f);
     color: #fff;
   }
-`;
+`

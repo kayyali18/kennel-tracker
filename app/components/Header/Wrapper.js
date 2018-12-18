@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Wrapper = styled.nav`
   display: flex;
@@ -8,6 +8,6 @@ const Wrapper = styled.nav`
   height: 100px;
   position: sticky;
   top: 0;
-`;
+`
 
-export default Wrapper;
+export default Wrapper

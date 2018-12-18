@@ -4,9 +4,9 @@
  * This contains all the text for the Header component.
  */
 
-import { defineMessages } from 'react-intl';
+import { defineMessages } from 'react-intl'
 
-export const scope = 'app.components.Header';
+export const scope = 'app.components.Header'
 
 export default defineMessages({
   home: {
@@ -25,4 +25,4 @@ export default defineMessages({
     id: `${scope}.search`,
     defaultMessage: 'Search',
   },
-});
+})

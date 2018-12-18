@@ -7,21 +7,21 @@
  *
  */
 
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
-import styled from 'styled-components';
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
+import styled from 'styled-components'
 
-import Header from 'components/Header';
-import HomePage from 'containers/HomePage/Loadable';
-import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import Header from 'components/Header'
+import HomePage from 'containers/HomePage/Loadable'
+import NotFoundPage from 'containers/NotFoundPage/Loadable'
 
-import GlobalStyle from '../../global-styles';
+import GlobalStyle from '../../global-styles'
 
 const AppWrapper = styled.div`
   height: 100vh;
   background: linear-gradient(#ff700b, #ff275f);
-`;
+`
 
 export default function App() {
   return (
@@ -39,5 +39,5 @@ export default function App() {
       </Switch>
       <GlobalStyle />
     </AppWrapper>
-  );
+  )
 }
