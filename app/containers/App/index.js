@@ -9,20 +9,35 @@
 
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import styled from 'styled-components';
 
+import Header from 'components/Header';
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 import GlobalStyle from '../../global-styles';
 
+const AppWrapper = styled.div`
+  height: 100vh;
+  background: linear-gradient(#ff700b, #ff275f);
+`;
+
 export default function App() {
   return (
-    <div>
+    <AppWrapper>
+      <Helmet titleTemplate="%s - Kennel Tracker" defaultTitle="Kennel Tracker">
+        <meta
+          name="Kennel Tracker"
+          content="Application to track Kennel Occupancy"
+        />
+      </Helmet>
+      <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
-    </div>
+    </AppWrapper>
   );
 }
