@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should match snapshot 1`] = `
+<Wrapper>
+  <HeaderLink
+    to="/"
+  >
+    <FormattedMessage
+      defaultMessage="Home"
+      id="app.components.Header.home"
+      values={Object {}}
+    />
+  </HeaderLink>
+  <HeaderLink
+    to="/booking"
+  >
+    <FormattedMessage
+      defaultMessage="New Booking"
+      id="app.components.Header.newBooking"
+      values={Object {}}
+    />
+  </HeaderLink>
+  <HeaderLink
+    to="/calendar"
+  >
+    <FormattedMessage
+      defaultMessage="Calendar"
+      id="app.components.Header.calendar"
+      values={Object {}}
+    />
+  </HeaderLink>
+  <HeaderLink
+    to="/profile"
+  >
+    <FormattedMessage
+      defaultMessage="Search"
+      id="app.components.Header.search"
+      values={Object {}}
+    />
+  </HeaderLink>
+</Wrapper>
+`;
