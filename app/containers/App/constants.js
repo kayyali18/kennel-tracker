@@ -8,3 +8,7 @@
  * Follow this format:
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
+
+export const LOAD_API = 'kennel-tracker/App/LOAD_API'
+export const LOAD_API_SUCCESS = 'kennel-tracker/App/LOAD_API_SUCCESS'
+export const LOAD_API_ERROR = 'kennel-tracker/App/LOAD_API_ERROR'
