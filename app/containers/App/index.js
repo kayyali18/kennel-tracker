@@ -15,6 +15,7 @@ import styled from 'styled-components'
 import Header from 'components/Header'
 import HomePage from 'containers/HomePage/Loadable'
 import NotFoundPage from 'containers/NotFoundPage/Loadable'
+import BookingForm from 'components/BookingForm'
 
 import GlobalStyle from '../../global-styles'
 
@@ -33,6 +34,7 @@ export default function App() {
         />
       </Helmet>
       <Header />
+      <BookingForm />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route component={NotFoundPage} />
