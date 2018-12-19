@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form1 /> should match snapshot 1`] = `
+.c0 {
+  display: grid;
+  grid-gap: 4rem;
+  grid-template-areas: 'input .';
+  height: 100%;
+  position: absolute;
+  overflow: scroll;
+  width: 100%;
+}
+
+.c0 input {
+  border: 2px solid black;
+  position: relative;
+  height: 50px;
+}
+
+.c0 input:nth-child(odd) {
+  top: 2rem;
+  left: 4rem;
+}
+
+.c0 input:nth-child(even) {
+  top: 6rem;
+  right: 4rem;
+}
+
+<form
+  className="c0"
+/>
+`;

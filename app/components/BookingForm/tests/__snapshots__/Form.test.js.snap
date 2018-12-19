@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Form /> should match snapshot 1`] = `
+.c0 {
+  display: grid;
+  grid-gap: 4rem;
+  grid-template-areas: 'input .';
+  height: 100%;
+  position: absolute;
+  overflow: scroll;
+  width: 100%;
+}
+
+.c0 input {
+  border: 2px solid black;
+  position: relative;
+  height: 50px;
+}
+
+.c0 input:nth-child(odd) {
+  top: 2rem;
+  left: 4rem;
+}
+
+.c0 input:nth-child(even) {
+  top: 6rem;
+  right: 4rem;
+}
+
+<div>
+  <form
+    className="c0"
+  >
+    <input
+      placeholder="Name"
+      type="text"
+    />
+    <input
+      placeholder="Address"
+      type="text"
+    />
+    <input
+      placeholder="Cellphone"
+      type="number"
+    />
+    <input
+      placeholder="Homephone"
+      type="number"
+    />
+    <input
+      placeholder="E-mail"
+      type="email"
+    />
+    <input
+      placeholder="Emergency Contact Name"
+      type="text"
+    />
+    <input
+      placeholder="Emergency Contact #"
+      type="number"
+    />
+  </form>
+</div>
+`;
