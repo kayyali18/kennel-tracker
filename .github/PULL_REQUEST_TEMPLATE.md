@@ -1,23 +1,13 @@
-## React Boilerplate
+## Types of changes
 
-Thank you for contributing! Please take a moment to review our [**contributing guidelines**](https://github.com/react-boilerplate/react-boilerplate/blob/master/CONTRIBUTING.md)
-to make the process easy and effective for everyone involved.
+<!--- What types of changes does your code introduce? Put an `x` in all the boxes that apply: -->
 
-**Please open an issue** before embarking on any significant pull request, especially those that
-add a new library or change existing tests, otherwise you risk spending a lot of time working
-on something that might not end up being merged into the project.
-
-Before opening a pull request, please ensure:
-
-- [ ] You have followed our [**contributing guidelines**](https://github.com/react-boilerplate/react-boilerplate/blob/master/CONTRIBUTING.md)
-- [ ] Double-check your branch is based on `dev` and targets `dev` 
-- [ ] Pull request has tests (we are going for 100% coverage!)
-- [ ] Code is well-commented, linted and follows project conventions
-- [ ] Documentation is updated (if necessary)
-- [ ] Internal code generators and templates are updated (if necessary)
-- [ ] Description explains the issue/use-case resolved and auto-closes related issues
-
-Be kind to code reviewers, please try to keep pull requests as small and focused as possible :)
-
-**IMPORTANT**: By submitting a patch, you agree to allow the project
-owners to license your work under the terms of the [MIT License](https://github.com/react-boilerplate/react-boilerplate/blob/master/LICENSE.md).
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to change)
+- [ ] I have read the **CONTRIBUTING** document.
+- [ ] My code follows the code style of this project.
+- [ ] My change requires a change to the documentation.
+- [ ] I have updated the documentation accordingly.
+- [ ] I have added tests to cover my changes.
+- [ ] All new and existing tests passed.
