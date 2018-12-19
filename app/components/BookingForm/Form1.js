@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 const Form1 = styled.form`
-  background-color: beige;
   display: grid;
   grid-gap: 4rem;
   grid-template-areas: 'input .';
