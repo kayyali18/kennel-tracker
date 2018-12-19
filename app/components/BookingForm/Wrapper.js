@@ -2,8 +2,10 @@ import styled from 'styled-components'
 
 const Wrapper = styled.article`
   background-color: red;
-  height: 200px;
-  margin: 4rem auto;
+  height: 60vh;
+  width: 80vw;
+  margin: 4rem calc(100vw * 0.08);
+  position: absolute;
 `
 
 export default Wrapper
