@@ -8,6 +8,7 @@ import { connectRouter } from 'connected-react-router/immutable'
 import history from 'utils/history'
 import languageProviderReducer from 'containers/LanguageProvider/reducer'
 import globalReducer from 'containers/App/reducer'
+import homeReducer from 'containers/HomePage/reducer'
 
 /**
  * Merges the main reducer with the router state and dynamically injected reducers
@@ -15,6 +16,7 @@ import globalReducer from 'containers/App/reducer'
 export default function createReducer(injectedReducers = {}) {
   const rootReducer = combineReducers({
     global: globalReducer,
+    home: homeReducer,
     language: languageProviderReducer,
     ...injectedReducers,
   })
