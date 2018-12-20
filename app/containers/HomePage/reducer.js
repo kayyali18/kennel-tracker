@@ -15,7 +15,7 @@ import { DISPLAY_CURR_DOGS } from './constants'
 
 // The initial state of the App
 export const initialState = fromJS({
-  runInfo: {},
+  runInfo: false,
 })
 
 function homeReducer(state = initialState, action) {

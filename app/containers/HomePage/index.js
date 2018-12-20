@@ -22,8 +22,8 @@ import injectReducer from 'utils/injectReducer'
 import injectSaga from 'utils/injectSaga'
 import { makeSelectLoading, makeSelectError } from 'containers/App/selectors'
 import BookingForm from 'components/BookingForm'
+import Loading from 'components/Loading'
 import { makeSelectRunInfo } from './selectors'
-
 import messages from './messages'
 import reducer from './reducer'
 import saga from './saga'
@@ -32,33 +32,25 @@ import { runInfoSagaWatcher } from './actions'
 /* eslint-disable react/prefer-stateless-function */
 export class HomePage extends React.PureComponent {
   componentDidMount() {
-    const { dispatchSaga, data } = this.props
-    if (!data) dispatchSaga()
+    const { dispatchSaga } = this.props
     setTimeout(() => {
       dispatchSaga()
     }, 2000)
   }
 
-  clicked = () => {
-    const { dispatchSaga, hi } = this.props
-    hi()
-    dispatchSaga()
-  }
-
   render() {
+    const { data } = this.props
+    if (!data) return <Loading />
     return (
       <div>
         <Helmet>
-          <title>Stumble Page</title>
+          <title>Home Page</title>
           <meta
-            name="Stumble page with random result displayed"
-            content="Random content from across the web"
+            name="HomePage with relevant info"
+            content="Relevant content from across the web"
           />
         </Helmet>
         <h1>
-          <button type="submit" onClick={this.clicked}>
-            hi{' '}
-          </button>
           <BookingForm />
           <FormattedMessage {...messages.header} />
         </h1>

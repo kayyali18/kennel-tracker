@@ -4,7 +4,7 @@
 import { createSelector } from 'reselect'
 import { initialState } from './reducer'
 
-const selectHome = state => state.get('runInfo', initialState)
+const selectHome = state => state.get('home', initialState)
 
 const makeSelectRunInfo = () =>
   createSelector(selectHome, homeState => homeState.get('runInfo'))
