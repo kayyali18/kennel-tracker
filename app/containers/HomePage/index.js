@@ -40,6 +40,7 @@ export class HomePage extends React.PureComponent {
 
   render() {
     const { data } = this.props
+    console.log(data)
     if (!data) return <Loading />
     return (
       <div>
