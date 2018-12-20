@@ -14,10 +14,7 @@ import styled from 'styled-components'
 
 import Header from 'components/Header'
 import HomePage from 'containers/HomePage/Loadable'
-import BookingPage from 'containers/BookingPage'
 import NotFoundPage from 'containers/NotFoundPage/Loadable'
-import BookingForm from 'components/BookingForm'
-import ProgressBar from 'components/ProgressBar'
 
 import GlobalStyle from '../../global-styles'
 
@@ -36,11 +33,8 @@ export default function App() {
         />
       </Helmet>
       <Header />
-      <ProgressBar />
-      <BookingForm />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/booking" component={BookingPage} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />

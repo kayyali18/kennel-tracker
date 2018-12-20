@@ -10,16 +10,90 @@
  */
 
 import React from 'react'
+import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
+import { Helmet } from 'react-helmet'
+import { connect } from 'react-redux'
+import { compose } from 'redux'
+import { createStructuredSelector } from 'reselect'
+
+import { DAEMON } from 'utils/constants'
+import injectReducer from 'utils/injectReducer'
+import injectSaga from 'utils/injectSaga'
+import { makeSelectLoading, makeSelectError } from 'containers/App/selectors'
+import BookingForm from 'components/BookingForm'
+import { makeSelectRunInfo } from './selectors'
+
 import messages from './messages'
+import reducer from './reducer'
+import saga from './saga'
+import { runInfoSagaWatcher } from './actions'
 
 /* eslint-disable react/prefer-stateless-function */
-export default class HomePage extends React.PureComponent {
+export class HomePage extends React.PureComponent {
+  componentDidMount() {
+    const { dispatchSaga, data } = this.props
+    if (!data) dispatchSaga()
+    setTimeout(() => {
+      dispatchSaga()
+    }, 2000)
+  }
+
+  clicked = () => {
+    const { dispatchSaga, hi } = this.props
+    hi()
+    dispatchSaga()
+  }
+
   render() {
     return (
-      <h1>
-        <FormattedMessage {...messages.header} />
-      </h1>
+      <div>
+        <Helmet>
+          <title>Stumble Page</title>
+          <meta
+            name="Stumble page with random result displayed"
+            content="Random content from across the web"
+          />
+        </Helmet>
+        <h1>
+          <button type="submit" onClick={this.clicked}>
+            hi{' '}
+          </button>
+          <BookingForm />
+          <FormattedMessage {...messages.header} />
+        </h1>
+      </div>
     )
   }
+}
+
+export const mapDispatchToProps = dispatch => ({
+  dispatchSaga: () => dispatch(runInfoSagaWatcher()),
+})
+
+const mapStateToProps = createStructuredSelector({
+  loading: makeSelectLoading(),
+  error: makeSelectError(),
+  data: makeSelectRunInfo(),
+})
+
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)
+
+const withReducer = injectReducer({ key: 'home', reducer })
+const withSaga = injectSaga({ key: 'home', saga, mode: DAEMON })
+
+export default compose(
+  withReducer,
+  withSaga,
+  withConnect,
+)(HomePage)
+
+HomePage.propTypes = {
+  loading: PropTypes.bool,
+  error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+  data: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+  dispatchSaga: PropTypes.func,
 }

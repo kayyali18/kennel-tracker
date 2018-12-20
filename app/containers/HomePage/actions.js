@@ -51,7 +51,7 @@ export function displayCurrDogs(runInfo) {
 /**
  * Fires off saga watch for this action type
  */
-export function stumbleSagaWatcher() {
+export function runInfoSagaWatcher() {
   return {
     type: RUN_CURR_DOGS_SAGA,
   }
