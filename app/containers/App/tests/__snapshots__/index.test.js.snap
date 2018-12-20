@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> should match snapshot 1`] = `
+<App__AppWrapper>
+  <HelmetWrapper
+    defaultTitle="Kennel Tracker"
+    defer={true}
+    encodeSpecialCharacters={true}
+    titleTemplate="%s - Kennel Tracker"
+  >
+    <meta
+      content="Application to track Kennel Occupancy"
+      name="Kennel Tracker"
+    />
+  </HelmetWrapper>
+  <Header />
+  <ProgressBar />
+  <BookingForm />
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={Object {}}
+      exact={true}
+      path="/booking"
+    />
+    <Route
+      component={[Function]}
+    />
+  </Switch>
+  <GlobalStyleComponent
+    suppressMultiMountWarning={false}
+  />
+</App__AppWrapper>
+`;

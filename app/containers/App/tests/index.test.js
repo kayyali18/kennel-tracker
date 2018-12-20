@@ -9,4 +9,8 @@ describe('<App />', () => {
     const renderedComponent = shallow(<App />)
     expect(renderedComponent.find(Route).length).not.toBe(0)
   })
+  it('should match snapshot', () => {
+    const renderedComponent = shallow(<App />)
+    expect(renderedComponent).toMatchSnapshot()
+  })
 })
