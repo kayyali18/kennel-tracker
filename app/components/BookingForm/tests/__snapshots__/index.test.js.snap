@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BookingForm /> should match snapshot 1`] = `
+<article
+  className="Wrapper-sc-1w8d0gj-0 dGnIKR"
+>
+  <div>
+    <form
+      className="Form1-sc-1pwvulr-0 jOSPTR"
+    >
+      <input
+        placeholder="Name"
+        type="text"
+      />
+      <input
+        placeholder="Address"
+        type="text"
+      />
+      <input
+        placeholder="Cellphone"
+        type="number"
+      />
+      <input
+        placeholder="Homephone"
+        type="number"
+      />
+      <input
+        placeholder="E-mail"
+        type="email"
+      />
+      <input
+        placeholder="Emergency Contact Name"
+        type="text"
+      />
+      <input
+        placeholder="Emergency Contact #"
+        type="number"
+      />
+    </form>
+  </div>
+</article>
+`;
