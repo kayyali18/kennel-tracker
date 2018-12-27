@@ -1,5 +1,5 @@
 /**
- * Gets the suggestions from the tasteDive API
+ * Gets the suggestions from the kennel_tracker API
  */
 
 import { call, put, takeLatest } from 'redux-saga/effects'
