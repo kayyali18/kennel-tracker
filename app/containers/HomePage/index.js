@@ -21,7 +21,6 @@ import { DAEMON } from 'utils/constants'
 import injectReducer from 'utils/injectReducer'
 import injectSaga from 'utils/injectSaga'
 import { makeSelectLoading, makeSelectError } from 'containers/App/selectors'
-import BookingForm from 'components/BookingForm'
 import Loading from 'components/Loading'
 import Wrapper from './Wrapper'
 import { makeSelectRunInfo } from './selectors'
@@ -49,15 +48,21 @@ export class HomePage extends React.PureComponent {
     try {
       dogInfo = data.data.map(dog => (
         <div className="run-info">
-          <p className="pet">Run Number: {dog.attributes.runNumber}</p>
           <p className="pet">
-            Pet Name: {dog.attributes.pet.data.attributes.name}
+            <strong>Run Number: </strong>
+            {dog.attributes.runNumber}
           </p>
           <p className="pet">
-            Species: {dog.attributes.pet.data.attributes.species}
+            <strong>Pet Name: </strong>
+            {dog.attributes.pet.data.attributes.name}
           </p>
           <p className="pet">
-            Breed: {dog.attributes.pet.data.attributes.breed}
+            <strong>Species: </strong>
+            {dog.attributes.pet.data.attributes.species}
+          </p>
+          <p className="pet">
+            <strong>Breed: </strong>
+            {dog.attributes.pet.data.attributes.breed}
           </p>
         </div>
       ))
@@ -80,8 +85,6 @@ export class HomePage extends React.PureComponent {
         </Helmet>
         <Wrapper>
           <div>{dogInfo}</div>
-
-          <BookingForm />
         </Wrapper>
       </div>
     )
