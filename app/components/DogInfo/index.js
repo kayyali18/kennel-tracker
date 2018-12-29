@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import Wrapper from './Wrapper'
 
 const DogInfo = props => {
   console.log(props.location.state.dog)
   return (
-    <div>
+    <Wrapper>
       <p>Name: {props.location.state.dog.pet.data.attributes.name}</p>
       <p>Pet name: {props.location.state.dog.runNumber}</p>
       <p>Check In: {props.location.state.dog.checkin}</p>
@@ -31,7 +32,7 @@ const DogInfo = props => {
       <Link to="/">
         <button type="submit">back to home</button>
       </Link>
-    </div>
+    </Wrapper>
   )
 }
 

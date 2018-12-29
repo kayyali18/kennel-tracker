@@ -11,12 +11,10 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-// import { FormattedMessage } from 'react-intl'
 import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { createStructuredSelector } from 'reselect'
-// import { Route, NavLink, Link } from 'react-router-dom'
 
 import { DAEMON } from 'utils/constants'
 import injectReducer from 'utils/injectReducer'
@@ -24,14 +22,12 @@ import injectSaga from 'utils/injectSaga'
 import { makeSelectLoading, makeSelectError } from 'containers/App/selectors'
 import Loading from 'components/Loading'
 import Wrapper from './Wrapper'
+import Div from './Div'
+import PTag from './PTag'
 import { makeSelectRunInfo } from './selectors'
-// import messages from './messages'
 import reducer from './reducer'
 import saga from './saga'
 import { runInfoSagaWatcher } from './actions'
-import './HomePage.css'
-
-// import DogRun from '../DogRunPage'
 
 /* eslint-disable react/prefer-stateless-function */
 export class HomePage extends React.PureComponent {
@@ -41,9 +37,9 @@ export class HomePage extends React.PureComponent {
     this.state = {
       dog: [],
     }
-    // setTimeout(() => {
-    //   dispatchSaga()
-    // }, 0)
+    setTimeout(() => {
+      dispatchSaga()
+    }, 0)
   }
 
   handleDogs = async dogData => {
@@ -61,7 +57,7 @@ export class HomePage extends React.PureComponent {
     let dogInfo
     try {
       dogInfo = data.data.map(dog => (
-        <div
+        <Div
           className="run-info"
           onClick={() => this.handleDogs(dog.attributes)}
           onKeyDown={() => this.handleDogs(dog.attributes)}
@@ -69,23 +65,23 @@ export class HomePage extends React.PureComponent {
           aria-label="click for more info"
           tabIndex="0"
         >
-          <p className="pet">
+          <PTag>
             <strong>Run Number: </strong>
             {dog.attributes.runNumber}
-          </p>
-          <p className="pet">
+          </PTag>
+          <PTag>
             <strong>Pet Name: </strong>
             {dog.attributes.pet.data.attributes.name}
-          </p>
-          <p className="pet">
+          </PTag>
+          <PTag>
             <strong>Species: </strong>
             {dog.attributes.pet.data.attributes.species}
-          </p>
-          <p className="pet">
+          </PTag>
+          <PTag>
             <strong>Breed: </strong>
             {dog.attributes.pet.data.attributes.breed}
-          </p>
-        </div>
+          </PTag>
+        </Div>
       ))
     } catch {
       console.log('error')
