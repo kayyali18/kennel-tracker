@@ -5,8 +5,8 @@ import Wrapper from './Wrapper'
 import PTag from './PTag'
 import Button from './Button'
 
+/* eslint-disable */
 const DogInfo = props => {
-  console.log(props.location.state.dog)
   return (
     <Wrapper>
       <PTag>

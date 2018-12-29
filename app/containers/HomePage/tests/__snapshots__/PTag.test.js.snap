@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PTag /> should match snapshot 1`] = `
+.c0 {
+  text-align: center;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: #595959;
+}
+
+<p
+  className="c0"
+/>
+`;

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Div /> should match snapshot 1`] = `
+.c0 {
+  display: inline-block;
+  width: 250px;
+  border: 2px dashed #595959;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px;
+}
+
+<div
+  className="c0"
+/>
+`;
