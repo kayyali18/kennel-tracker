@@ -16,6 +16,7 @@ import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { createStructuredSelector } from 'reselect'
+// import { Route, NavLink, Link } from 'react-router-dom'
 
 import { DAEMON } from 'utils/constants'
 import injectReducer from 'utils/injectReducer'
@@ -37,9 +38,22 @@ export class HomePage extends React.PureComponent {
   async componentDidMount() {
     const { dispatchSaga } = this.props
     await dispatchSaga()
-    setTimeout(() => {
-      dispatchSaga()
-    }, 0)
+    this.state = {
+      dog: [],
+    }
+    // setTimeout(() => {
+    //   dispatchSaga()
+    // }, 0)
+  }
+
+  handleDogs = async dogData => {
+    // console.log(dogData)
+    await this.setState({ dog: dogData })
+    console.log('look at state', this.state.dog)
+    await this.props.history.push({
+      pathname: '/dog',
+      state: { dog: dogData },
+    })
   }
 
   render() {
@@ -47,7 +61,14 @@ export class HomePage extends React.PureComponent {
     let dogInfo
     try {
       dogInfo = data.data.map(dog => (
-        <div className="run-info">
+        <div
+          className="run-info"
+          onClick={() => this.handleDogs(dog.attributes)}
+          onKeyDown={() => this.handleDogs(dog.attributes)}
+          role="button"
+          aria-label="click for more info"
+          tabIndex="0"
+        >
           <p className="pet">
             <strong>Run Number: </strong>
             {dog.attributes.runNumber}
@@ -116,8 +137,7 @@ export default compose(
 )(HomePage)
 
 HomePage.propTypes = {
-  // loading: PropTypes.bool,
-  // error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   data: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+  history: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   dispatchSaga: PropTypes.func,
 }

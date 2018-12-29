@@ -14,6 +14,7 @@ import styled from 'styled-components'
 
 import Header from 'components/Header'
 import HomePage from 'containers/HomePage/Loadable'
+import DogInfo from 'components/DogInfo'
 import NotFoundPage from 'containers/NotFoundPage/Loadable'
 
 import GlobalStyle from '../../global-styles'
@@ -35,6 +36,7 @@ export default function App() {
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/dog" component={DogInfo} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
