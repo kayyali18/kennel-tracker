@@ -2,35 +2,65 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import Wrapper from './Wrapper'
+import PTag from './PTag'
+import Button from './Button'
 
 const DogInfo = props => {
   console.log(props.location.state.dog)
   return (
     <Wrapper>
-      <p>Name: {props.location.state.dog.pet.data.attributes.name}</p>
-      <p>Pet name: {props.location.state.dog.runNumber}</p>
-      <p>Check In: {props.location.state.dog.checkin}</p>
-      <p>Check Out: {props.location.state.dog.checkout}</p>
-      <p>Species: {props.location.state.dog.pet.data.attributes.species}</p>
-      <p>Breed: {props.location.state.dog.pet.data.attributes.breed}</p>
-      <p>Date of Birth: {props.location.state.dog.pet.data.attributes.dob}</p>
-      <p>
-        Feeding Instructions:
+      <PTag>
+        {' '}
+        <strong> Name: </strong>{' '}
+        {props.location.state.dog.pet.data.attributes.name}
+      </PTag>
+      <PTag>
+        <strong>Pet name: </strong>
+        {props.location.state.dog.runNumber}
+      </PTag>
+      <PTag>
+        <strong>Check In: </strong>
+        {props.location.state.dog.checkin}
+      </PTag>
+      <PTag>
+        <strong>Check Out: </strong>
+        {props.location.state.dog.checkout}
+      </PTag>
+      <PTag>
+        <strong>Species: </strong>
+        {props.location.state.dog.pet.data.attributes.species}
+      </PTag>
+      <PTag>
+        <strong>Breed: </strong>
+        {props.location.state.dog.pet.data.attributes.breed}
+      </PTag>
+      <PTag>
+        <strong>Date of Birth: </strong>
+        {props.location.state.dog.pet.data.attributes.dob}
+      </PTag>
+      <PTag>
+        <strong>Feeding Instructions: </strong>
         {props.location.state.dog.pet.data.attributes.feedingInstructions}
-      </p>
-      <p>
-        Medications: {props.location.state.dog.pet.data.attributes.medications}
-      </p>
-      <p>
-        Owner: {props.location.state.dog.owner.data.attributes.firstName}{' '}
+      </PTag>
+      <PTag>
+        <strong>Medications: </strong>
+        {props.location.state.dog.pet.data.attributes.medications}
+      </PTag>
+      <PTag>
+        <strong> Owner:</strong>{' '}
+        {props.location.state.dog.owner.data.attributes.firstName}{' '}
         {props.location.state.dog.owner.data.attributes.lastName}
-      </p>
-      <p>
-        Cell phone: {props.location.state.dog.owner.data.attributes.cellPhone}
-      </p>
-      <p>Email: {props.location.state.dog.owner.data.attributes.email}</p>
+      </PTag>
+      <PTag>
+        <strong>Cell phone: </strong>
+        {props.location.state.dog.owner.data.attributes.cellPhone}
+      </PTag>
+      <PTag>
+        <strong>Email: </strong>
+        {props.location.state.dog.owner.data.attributes.email}
+      </PTag>
       <Link to="/">
-        <button type="submit">back to home</button>
+        <Button>back to home</Button>
       </Link>
     </Wrapper>
   )
