@@ -2,10 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Input from './Input'
+import ModalWrapper from './ModalWrapper'
 
 function Modal(props) {
   return (
-    <div className="Modal">
+    <ModalWrapper>
       <form onSubmit={props.onSubmit} className="ModalForm">
         <Input id="name" type="text" placeholder="John Johnson" />
         <Input
@@ -18,7 +19,7 @@ function Modal(props) {
           Log in <i className="fa fa-fw fa-chevron-right" />
         </button>
       </form>
-    </div>
+    </ModalWrapper>
   )
 }
 

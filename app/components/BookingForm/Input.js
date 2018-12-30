@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import InputWrapper from './InputWrapper'
 
 function Input(props) {
   return (
-    <div className="Input">
+    <InputWrapper>
       <label>
         <input
           id={props.name}
@@ -13,7 +14,7 @@ function Input(props) {
           placeholder={props.placeholder}
         />
       </label>
-    </div>
+    </InputWrapper>
   )
 }
 

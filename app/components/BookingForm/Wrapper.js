@@ -1,6 +1,12 @@
 import styled from 'styled-components'
 
 const Form1 = styled.section`
+  background-image: url(https://unsplash.it/1400/799);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #3e363f;
+
   display: grid;
   grid-gap: 4rem;
   grid-template-areas: 'input .';
@@ -22,6 +28,26 @@ const Form1 = styled.section`
   input:nth-child(even) {
     top: 6rem;
     right: 4rem;
+  }
+
+  .form-enter {
+    margin-top: 30px;
+    opacity: 0.01;
+  }
+  .form-enter-active {
+    margin-top: 0px;
+    opacity: 1;
+    transition: opacity 0.5s ease, margin 0.5s ease;
+  }
+
+  .form-leave {
+    margin-top: 0px;
+    opacity: 1;
+  }
+  .form-leave-active {
+    margin-top: -30px;
+    opacity: 0.01;
+    transition: opacity 0.3s ease, margin 0.5s ease;
   }
 `
 export default Form1
