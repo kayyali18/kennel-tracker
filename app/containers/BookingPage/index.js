@@ -13,7 +13,7 @@
 // import BookingForm from 'components/BookingForm'
 // import injectReducer from 'utils/injectReducer'
 // import injectSaga from 'utils/injectSaga'
-// import { DAEMOM } from 'utils/constants'
+// import { DAEMON } from 'utils/constants'
 // import {
 //   makeSelectLoading,
 //   makeSelectError,
