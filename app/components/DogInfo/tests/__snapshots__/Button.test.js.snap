@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> should match snapshot 1`] = `
+.c0 {
+  margin: 0 auto;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  color: grey;
+  border: none;
+  position: relative;
+  height: 35px;
+  width: 500px;
+  font-size: 1.6em;
+  padding: 0 0.5em;
+  cursor: pointer;
+  -webkit-transition: 800ms ease all;
+  transition: 800ms ease all;
+  outline: none;
+}
+
+.c0:before,
+.c0:after {
+  content: '';
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: grey;
+  -webkit-transition: 400ms ease all;
+  transition: 400ms ease all;
+}
+
+.c0:after {
+  right: inherit;
+  top: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  left: 0;
+  bottom: 0;
+}
+
+.c0:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: grey;
+}
+
+.c0:hover:before,
+.c0:hover:after {
+  width: 100%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: 800ms ease all;
+  transition: 800ms ease all;
+}
+
+<div
+  className="c0"
+/>
+`;

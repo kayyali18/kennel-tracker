@@ -29,7 +29,7 @@ import reducer from './reducer'
 import saga from './saga'
 import { runInfoSagaWatcher } from './actions'
 
-/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable */
 export class HomePage extends React.PureComponent {
   async componentDidMount() {
     const { dispatchSaga } = this.props
@@ -43,9 +43,7 @@ export class HomePage extends React.PureComponent {
   }
 
   handleDogs = async dogData => {
-    // console.log(dogData)
     await this.setState({ dog: dogData })
-    console.log('look at state', this.state.dog)
     await this.props.history.push({
       pathname: '/dog',
       state: { dog: dogData },
