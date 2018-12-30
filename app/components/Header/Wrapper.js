@@ -5,9 +5,10 @@ const Wrapper = styled.nav`
   justify-content: space-around;
   flex-wrap: wrap;
   background-color: #fff;
-  height: 100px;
+  height: 70px;
   position: sticky;
   top: 0;
+  z-index: 999;
 `
 
 export default Wrapper

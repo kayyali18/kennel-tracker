@@ -24,7 +24,11 @@ import GlobalStyle from '../../global-styles'
 
 const AppWrapper = styled.div`
   height: 100%;
+<<<<<<< HEAD
   background: linear-gradient(#a5a5a5, #f2f2f2);
+=======
+  background: linear-gradient(#ff700b, #ff275f);
+>>>>>>> Adjust navbar styling
 `
 
 export default function App() {
