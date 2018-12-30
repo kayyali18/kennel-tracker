@@ -11,7 +11,6 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FormattedMessage } from 'react-intl'
 import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
@@ -21,40 +20,89 @@ import { DAEMON } from 'utils/constants'
 import injectReducer from 'utils/injectReducer'
 import injectSaga from 'utils/injectSaga'
 import { makeSelectLoading, makeSelectError } from 'containers/App/selectors'
-import BookingForm from 'components/BookingForm'
 import Loading from 'components/Loading'
+import Wrapper from './Wrapper'
+import Div from './Div'
+import PTag from './PTag'
 import { makeSelectRunInfo } from './selectors'
-import messages from './messages'
 import reducer from './reducer'
 import saga from './saga'
 import { runInfoSagaWatcher } from './actions'
 
 /* eslint-disable react/prefer-stateless-function */
 export class HomePage extends React.PureComponent {
-  componentDidMount() {
+  async componentDidMount() {
     const { dispatchSaga } = this.props
+    await dispatchSaga()
+    this.state = {
+      dog: [],
+    }
     setTimeout(() => {
       dispatchSaga()
-    }, 2000)
+    }, 0)
+  }
+
+  handleDogs = async dogData => {
+    // console.log(dogData)
+    await this.setState({ dog: dogData })
+    console.log('look at state', this.state.dog)
+    await this.props.history.push({
+      pathname: '/dog',
+      state: { dog: dogData },
+    })
   }
 
   render() {
     const { data } = this.props
-    console.log(data)
-    if (!data) return <Loading />
+    let dogInfo
+    try {
+      dogInfo = data.data.map(dog => (
+        <Div
+          className="run-info"
+          onClick={() => this.handleDogs(dog.attributes)}
+          onKeyDown={() => this.handleDogs(dog.attributes)}
+          role="button"
+          aria-label="click for more info"
+          tabIndex="0"
+        >
+          <PTag>
+            <strong>Run Number: </strong>
+            {dog.attributes.runNumber}
+          </PTag>
+          <PTag>
+            <strong>Pet Name: </strong>
+            {dog.attributes.pet.data.attributes.name}
+          </PTag>
+          <PTag>
+            <strong>Species: </strong>
+            {dog.attributes.pet.data.attributes.species}
+          </PTag>
+          <PTag>
+            <strong>Breed: </strong>
+            {dog.attributes.pet.data.attributes.breed}
+          </PTag>
+        </Div>
+      ))
+    } catch {
+      console.log('error')
+    }
+
+    if (!data) {
+      return <Loading />
+    }
+
     return (
       <div>
         <Helmet>
           <title>Home Page</title>
           <meta
             name="HomePage with relevant info"
-            content="Relevant content from across the web"
+            content="Content explaining current dogs in the Kennel"
           />
         </Helmet>
-        <h1>
-          <BookingForm />
-          <FormattedMessage {...messages.header} />
-        </h1>
+        <Wrapper>
+          <div>{dogInfo}</div>
+        </Wrapper>
       </div>
     )
   }
@@ -85,8 +133,7 @@ export default compose(
 )(HomePage)
 
 HomePage.propTypes = {
-  loading: PropTypes.bool,
-  error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   data: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+  history: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   dispatchSaga: PropTypes.func,
 }

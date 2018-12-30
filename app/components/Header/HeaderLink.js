@@ -16,15 +16,14 @@ export default styled(Link)`
   font-weight: bold;
   font-size: calc(16px + 6 * ((100vw - 320px) / 680));
   border: none;
-  color: #ff4a6e;
+  color: #595959;
 
   &:active {
-    background: red;
-    color: #fff;
+    color: #595959;
   }
 
   &:hover {
-    background: linear-gradient(#ff700b, #ff275f);
-    color: #fff;
+    background: linear-gradient(#a5a5a5, #f2f2f2);
+    color: #595959;
   }
 `
