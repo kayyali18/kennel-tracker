@@ -27,7 +27,7 @@
 
 // /* eslint-disable react/prefer-stateless-function */
 
-// export class BookingPage extends React.PureComponent {
+// export default class BookingPage extends React.PureComponent {
 //   componentDidMount() {}
 
 //   render() {

@@ -14,6 +14,7 @@ import styled from 'styled-components'
 
 import Header from 'components/Header'
 import HomePage from 'containers/HomePage/Loadable'
+import BookingPage from 'containers/BookingPage/Loadable'
 import DogInfo from 'components/DogInfo'
 import Calendar from 'containers/Calendar'
 import Login from 'containers/Login'
@@ -39,8 +40,12 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/dog" component={DogInfo} />
+<<<<<<< HEAD
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path="/login" component={Login} />
+=======
+        <Route exact path="/booking" component={BookingPage} />
+>>>>>>> Add hot loading to Form
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
