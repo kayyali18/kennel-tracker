@@ -22,7 +22,7 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable'
 import GlobalStyle from '../../global-styles'
 
 const AppWrapper = styled.div`
-  height: 100vh;
+  height: 100%;
   background: linear-gradient(#a5a5a5, #f2f2f2);
 `
 
