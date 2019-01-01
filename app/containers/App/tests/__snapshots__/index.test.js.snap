@@ -27,6 +27,16 @@ exports[`<App /> should match snapshot 1`] = `
     />
     <Route
       component={[Function]}
+      exact={true}
+      path="/calendar"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/login"
+    />
+    <Route
+      component={[Function]}
     />
   </Switch>
   <GlobalStyleComponent
