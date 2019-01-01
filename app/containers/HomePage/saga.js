@@ -15,12 +15,20 @@ import request from 'utils/request'
 export function* getRunInfo() {
   // Select query from store
   const requestURL = `http://kennel-staging.herokuapp.com/api/v1/reservations/current`
+  const optionsObj = {
+    method: 'GET',
+    headers: {
+      Authorization:
+        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxLCJleHAiOjE1NDYzOTY1NDN9.pFGQrXfaqJ3HUQseBO71G9dD4Hroz9GJd_N_cT8uJZw',
+    },
+  }
   // const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
   // requestURL = `${proxyUrl}${requestURL}`
 
   try {
     // Call our request helper (see 'utils/request')
-    const results = yield call(request, requestURL)
+    const results = yield call(request, requestURL, optionsObj)
+    console.log('HELPP', results)
     yield put(displayCurrDogs(results))
     yield put(apiLoaded(results))
   } catch (err) {

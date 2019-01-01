@@ -38,6 +38,8 @@ function checkStatus(response) {
  * @return {object}           The response data
  */
 export default function request(url, options) {
+  console.log(url)
+  console.log(options)
   return fetch(url, options)
     .then(checkStatus)
     .then(parseJSON)
