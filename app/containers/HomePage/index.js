@@ -22,6 +22,7 @@ import injectSaga from 'utils/injectSaga'
 import { makeSelectLoading, makeSelectError } from 'containers/App/selectors'
 import Loading from 'components/Loading'
 import Wrapper from './Wrapper'
+import H1 from './H1'
 import Div from './Div'
 import PTag from './PTag'
 import { makeSelectRunInfo } from './selectors'
@@ -98,6 +99,7 @@ export class HomePage extends React.PureComponent {
             content="Content explaining current dogs in the Kennel"
           />
         </Helmet>
+        <H1>Kennel Tracker</H1>
         <Wrapper>
           <div>{dogInfo}</div>
         </Wrapper>
