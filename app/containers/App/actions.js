@@ -15,7 +15,13 @@
  *    }
  */
 
-import { LOAD_API, LOAD_API_SUCCESS, LOAD_API_ERROR } from './constants'
+import {
+  LOAD_API,
+  LOAD_API_SUCCESS,
+  LOAD_API_ERROR,
+  TOKEN_SUCCESS,
+  TOKEN_ERROR,
+} from './constants'
 
 /**
  * Load the api data, this action starts the request saga
@@ -84,7 +90,7 @@ export function tokenSuccess(token) {
 
 export function tokenError(error) {
   return {
-    type: TOKEN_SUCCESS,
+    type: TOKEN_ERROR,
     error,
   }
 }

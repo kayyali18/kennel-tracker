@@ -12,7 +12,13 @@
 
 import { fromJS } from 'immutable'
 
-import { LOAD_API_SUCCESS, LOAD_API, LOAD_API_ERROR } from './constants'
+import {
+  LOAD_API_SUCCESS,
+  LOAD_API,
+  LOAD_API_ERROR,
+  TOKEN_SUCCESS,
+  TOKEN_ERROR,
+} from './constants'
 
 // The initial state of the app
 const initialState = fromJS({
@@ -20,6 +26,7 @@ const initialState = fromJS({
   error: false,
   dogData: false,
   searchQuery: '',
+  authentication: false,
 })
 
 function appReducer(state = initialState, action) {
@@ -36,10 +43,12 @@ function appReducer(state = initialState, action) {
     case LOAD_API_ERROR:
       return state.set('error', action.error).set('loading', false)
 
-    case ON_INIT:
+    case TOKEN_ERROR:
+      return state.set('authentication', false)
       break
-    case RECIEVE_TOKEN:
+    case TOKEN_SUCCESS:
       localstorage.setItem('TOKEN', action.token)
+      return state.set('authentication', true)
       break
 
     default:

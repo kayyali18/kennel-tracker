@@ -20,6 +20,9 @@ const makeSelectSearchQuery = () =>
 const makeSelectData = () =>
   createSelector(selectGlobal, globalState => globalState.get('dogData'))
 
+const makeSelectAuthentication = () =>
+  createSelector(selectGlobal, globalState => globalState.get('authentication'))
+
 const makeSelectLocation = () =>
   createSelector(selectRouter, routerState =>
     routerState.get('location').toJS(),
@@ -33,4 +36,5 @@ export {
   makeSelectSearchQuery,
   makeSelectLocation,
   makeSelectData,
+  makeSelectAuthentication,
 }

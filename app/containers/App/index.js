@@ -8,10 +8,14 @@
  */
 
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
+import { connect } from 'react-redux'
+import { compose } from 'redux'
+import { createStructuredSelector } from 'reselect'
 
+import { makeSelectAuthentication } from './selectors'
 import Header from 'components/Header'
 import HomePage from 'containers/HomePage/Loadable'
 import DogInfo from 'components/DogInfo'
@@ -26,24 +30,43 @@ const AppWrapper = styled.div`
   background: linear-gradient(#a5a5a5, #f2f2f2);
 `
 
-export default function App() {
-  return (
-    <AppWrapper>
-      <Helmet titleTemplate="%s - Kennel Tracker" defaultTitle="Kennel Tracker">
-        <meta
-          name="Kennel Tracker"
-          content="Application to track Kennel Occupancy"
-        />
-      </Helmet>
-      <Header />
-      <Switch>
-        <Route exact path="/home" component={HomePage} />
-        <Route exact path="/dog" component={DogInfo} />
-        <Route exact path="/calendar" component={Calendar} />
-        <Route exact path="/" component={Login} />
-        <Route component={NotFoundPage} />
-      </Switch>
-      <GlobalStyle />
-    </AppWrapper>
-  )
+export class App extends React.PureComponent {
+  render() {
+    if (!this.props.authentication)
+      return (
+        <AppWrapper>
+          <Login />
+        </AppWrapper>
+      )
+    return (
+      <AppWrapper>
+        <Helmet
+          titleTemplate="%s - Kennel Tracker"
+          defaultTitle="Kennel Tracker"
+        >
+          <meta
+            name="Kennel Tracker"
+            content="Application to track Kennel Occupancy"
+          />
+        </Helmet>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/dog" component={DogInfo} />
+          <Route exact path="/calendar" component={Calendar} />
+          <Route exact path="/login" component={Login} />
+          <Route component={NotFoundPage} />
+        </Switch>
+        <GlobalStyle />
+      </AppWrapper>
+    )
+  }
 }
+
+const mapStateToProps = createStructuredSelector({
+  authentication: makeSelectAuthentication(),
+})
+
+const withConnect = connect(mapStateToProps)
+
+export default compose(withConnect)(App)

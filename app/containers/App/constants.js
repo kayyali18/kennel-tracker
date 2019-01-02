@@ -12,3 +12,5 @@
 export const LOAD_API = 'kennel-tracker/App/LOAD_API'
 export const LOAD_API_SUCCESS = 'kennel-tracker/App/LOAD_API_SUCCESS'
 export const LOAD_API_ERROR = 'kennel-tracker/App/LOAD_API_ERROR'
+export const TOKEN_SUCCESS = 'kennel-tracker/App/TOKEN_SUCCESS'
+export const TOKEN_ERROR = 'kennel-tracker/App/TOKEN_ERROR'
