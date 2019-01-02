@@ -24,11 +24,7 @@ import GlobalStyle from '../../global-styles'
 
 const AppWrapper = styled.div`
   height: 100%;
-<<<<<<< HEAD
-  background: linear-gradient(#a5a5a5, #f2f2f2);
-=======
   background: linear-gradient(#ff700b, #ff275f);
->>>>>>> Adjust navbar styling
 `
 
 export default function App() {
@@ -44,12 +40,9 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/dog" component={DogInfo} />
-<<<<<<< HEAD
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path="/login" component={Login} />
-=======
         <Route exact path="/booking" component={BookingPage} />
->>>>>>> Add hot loading to Form
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
