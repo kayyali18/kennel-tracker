@@ -15,7 +15,13 @@
  *    }
  */
 
-import { LOAD_API, LOAD_API_SUCCESS, LOAD_API_ERROR } from './constants'
+import {
+  LOAD_API,
+  LOAD_API_SUCCESS,
+  LOAD_API_ERROR,
+  LOGIN_SUCCESS,
+  LOGIN_ERROR,
+} from './constants'
 
 /**
  * Load the api data, this action starts the request saga
@@ -33,7 +39,7 @@ export function loadApi() {
  *
  * @param  {object} results The api response data
  *
- * @return {object}      An action object with a type of LOAD_API_SUCCESS passing the result
+ * @return {object} An action object with a type of LOAD_API_SUCCESS passing the result
  */
 export function apiLoaded(results) {
   return {
@@ -47,12 +53,42 @@ export function apiLoaded(results) {
  *
  * @param  {object} error The error
  *
- * @return {object}       An action object with a type of LOAD_API_ERROR passing the error
+ * @return {object} An action object with a type of LOAD_API_ERROR passing the error
  */
 
 export function apiLoadingError(error) {
   return {
     type: LOAD_API_ERROR,
+    error,
+  }
+}
+
+/**
+ * Dispatched when login credentials are credible
+ *
+ * @param  {object} response The response with expiration date and bearer token
+ *
+ * @return {object} An action object with a type of LOGIN_SUCCESS passing the response
+ */
+
+export function loginSucces(response) {
+  return {
+    type: LOGIN_SUCCESS,
+    response,
+  }
+}
+
+/**
+ * Dispatched when login credentials are uncredible
+ *
+ * @param  {object} error The response error
+ *
+ * @return {string} An action object with a type of LOGIN_ERROR passing the error
+ */
+
+export function loginError(error) {
+  return {
+    type: LOGIN_ERROR,
     error,
   }
 }
