@@ -12,7 +12,13 @@
 
 import { fromJS } from 'immutable'
 
-import { LOAD_API_SUCCESS, LOAD_API, LOAD_API_ERROR } from './constants'
+import {
+  LOAD_API_SUCCESS,
+  LOAD_API,
+  LOAD_API_ERROR,
+  LOGIN_SUCCESS,
+  LOGIN_ERROR,
+} from './constants'
 
 // The initial state of the app
 const initialState = fromJS({
@@ -20,6 +26,8 @@ const initialState = fromJS({
   error: false,
   dogData: false,
   searchQuery: '',
+  user: {},
+  authenticated: false,
 })
 
 function appReducer(state = initialState, action) {
@@ -35,6 +43,12 @@ function appReducer(state = initialState, action) {
 
     case LOAD_API_ERROR:
       return state.set('error', action.error).set('loading', false)
+
+    case LOGIN_SUCCESS:
+      return state.set('user', action.results).set('authenticated', true)
+
+    case LOGIN_ERROR:
+      return state.set('user', action.error).set('authenticated', false)
 
     default:
       return state
