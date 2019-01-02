@@ -14,6 +14,7 @@ import styled from 'styled-components'
 
 import Header from 'components/Header'
 import HomePage from 'containers/HomePage/Loadable'
+import BookingPage from 'containers/BookingPage/Loadable'
 import DogInfo from 'components/DogInfo'
 import Calendar from 'containers/Calendar'
 import Login from 'containers/Login'
@@ -23,7 +24,7 @@ import GlobalStyle from '../../global-styles'
 
 const AppWrapper = styled.div`
   height: 100%;
-  background: linear-gradient(#a5a5a5, #f2f2f2);
+  background: linear-gradient(#ff700b, #ff275f);
 `
 
 export default function App() {
@@ -41,6 +42,7 @@ export default function App() {
         <Route exact path="/dog" component={DogInfo} />
         <Route exact path="/calendar" component={Calendar} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/booking" component={BookingPage} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
