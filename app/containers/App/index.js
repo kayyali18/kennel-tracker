@@ -37,10 +37,10 @@ export default function App() {
       </Helmet>
       <Header />
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/home" component={HomePage} />
         <Route exact path="/dog" component={DogInfo} />
         <Route exact path="/calendar" component={Calendar} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/" component={Login} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />

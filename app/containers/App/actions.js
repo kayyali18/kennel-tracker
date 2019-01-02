@@ -56,3 +56,35 @@ export function apiLoadingError(error) {
     error,
   }
 }
+
+/**
+ * Dispatched on login to get token for authorization
+ *
+ * @param  {object} error The error
+ *
+ * @return {object}       An action object with a type of LOAD_API_ERROR passing the error
+ */
+
+export function tokenSuccess(token) {
+  return {
+    type: TOKEN_SUCCESS,
+    token,
+  }
+}
+
+// on login mount, fire this
+
+/**
+ * Dispatched on login to get token for authorization
+ *
+ * @param  {object} error The error
+ *
+ * @return {object}       An action object with a type of LOAD_API_ERROR passing the error
+ */
+
+export function tokenError(error) {
+  return {
+    type: TOKEN_SUCCESS,
+    error,
+  }
+}

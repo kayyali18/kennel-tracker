@@ -36,6 +36,12 @@ function appReducer(state = initialState, action) {
     case LOAD_API_ERROR:
       return state.set('error', action.error).set('loading', false)
 
+    case ON_INIT:
+      break
+    case RECIEVE_TOKEN:
+      localstorage.setItem('TOKEN', action.token)
+      break
+
     default:
       return state
   }
