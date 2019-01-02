@@ -19,7 +19,7 @@ export function* getRunInfo() {
     method: 'GET',
     headers: {
       Authorization:
-        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxLCJleHAiOjE1NDYzOTY1NDN9.pFGQrXfaqJ3HUQseBO71G9dD4Hroz9GJd_N_cT8uJZw',
+        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxLCJleHAiOjE1NDY0NjY5ODF9.b6lj-6mutJtoFYlr2MCMF2kU1WEP-2KCaMcMvnVKms8',
     },
   }
   // const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
