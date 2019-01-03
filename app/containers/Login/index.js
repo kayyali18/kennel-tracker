@@ -123,4 +123,3 @@ Login.propTypes = {
   dispatchUser: PropTypes.func,
   authenticated: PropTypes.bool,
 }
-// http://kennel-staging.herokuapp.com/api/v1/login?auth[email]=test@test.com&auth[password]=test_password
