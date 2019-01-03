@@ -138,4 +138,5 @@ HomePage.propTypes = {
   data: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   history: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   dispatchSaga: PropTypes.func,
+  authenticated: PropTypes.bool,
 }

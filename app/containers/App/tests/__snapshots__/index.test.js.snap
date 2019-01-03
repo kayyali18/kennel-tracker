@@ -37,6 +37,11 @@ exports[`<App /> should match snapshot 1`] = `
     />
     <Route
       component={[Function]}
+      exact={true}
+      path="/booking"
+    />
+    <Route
+      component={[Function]}
     />
   </Switch>
   <GlobalStyleComponent
