@@ -21,6 +21,7 @@ const LoginBtn = styled.input.attrs({
   border-bottom: 1px solid black;
   background: #0e0b12;
   color: #fff;
+  text-indent: 0px;
 
   -webkit-transform: translateZ(0);
      -moz-transform: translateZ(0);

@@ -13,8 +13,8 @@ import { runTokenSagaWatcher, submitUserCredentials } from './actions'
 import saga from './saga'
 import Wrapper from './Wrapper'
 import Form from './Form'
-import Input from './Input'
 import LoginBtn from './LoginBtn'
+import './login.css'
 
 /* eslint-disable */
 export class Login extends React.PureComponent {
@@ -68,20 +68,22 @@ export class Login extends React.PureComponent {
           <title>Login</title>
           <meta name="Login Page" content="Login Page for users" />
         </Helmet>
+        <h1 className="title-login">Kennel Tracker</h1>
         <Form
           onSubmit={e => {
             e.preventDefault()
             this.handleSubmit()
           }}
         >
-          <Input
+          <input
             onChange={this.handleChange}
             value={this.state.email}
             name="email"
             placeholder="E-mail"
             aria-label="Email"
           />
-          <Input
+
+          <input
             className="password-input"
             onChange={this.handleChange}
             type="password"
@@ -90,6 +92,7 @@ export class Login extends React.PureComponent {
             placeholder="Password"
             aria-label="Password"
           />
+
           <LoginBtn ref="loginBtn" size="2em" text="Login" />
         </Form>
       </Wrapper>

@@ -14,12 +14,12 @@ function Header() {
       <HeaderLink to="/booking">
         <FormattedMessage {...messages.newBooking} />
       </HeaderLink>
-      <HeaderLink to="/calendar">
+      {/* <HeaderLink to="/calendar">
         <FormattedMessage {...messages.calendar} />
       </HeaderLink>
       <HeaderLink to="/profile">
         <FormattedMessage {...messages.search} />
-      </HeaderLink>
+      </HeaderLink> */}
     </Wrapper>
   )
 }
