@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Redirect } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
-// import { createStructuredSelector } from 'reselect'
+import { createStructuredSelector } from 'reselect'
 
 import injectSaga from 'utils/injectSaga'
 import { DAEMON } from 'utils/constants'
 import { makeSelectAuthenticated } from 'containers/App/selectors'
-import { runTokenSagaWatcher } from './actions'
+import { runTokenSagaWatcher, submitUserCredentials } from './actions'
 import saga from './saga'
 import Wrapper from './Wrapper'
 import Form from './Form'
@@ -26,11 +27,6 @@ export class Login extends React.PureComponent {
     }
   }
 
-  async componentDidMount() {
-    const { dispatchSaga } = this.props
-    await dispatchSaga()
-  }
-
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -39,12 +35,14 @@ export class Login extends React.PureComponent {
 
   handleSubmit = () => {
     //fire of saga watcher action
-    console.log('hello')
-    //get token
+    const { dispatchSaga, dispatchUser } = this.props
+    const { email, password } = this.state
+    const user = { email, password }
+    dispatchUser(user)
+    dispatchSaga()
 
-    //fire off action to update store
-
-    //all good
+    //setstate to rerender because react lifecycle sucks
+    this.setState({})
   }
 
   userWarning = async (type, warning) => {
@@ -61,6 +59,9 @@ export class Login extends React.PureComponent {
   }
 
   render() {
+    const { authenticated } = this.props
+    if (authenticated) return <Redirect to="/" />
+
     return (
       <Wrapper>
         <Helmet>
@@ -98,9 +99,10 @@ export class Login extends React.PureComponent {
 
 const mapDispatchToProps = dispatch => ({
   dispatchSaga: () => dispatch(runTokenSagaWatcher()),
+  dispatchUser: user => dispatch(submitUserCredentials(user)),
 })
 
-const mapStateToProps = dispatch => ({
+const mapStateToProps = createStructuredSelector({
   authenticated: makeSelectAuthenticated(),
 })
 
@@ -118,6 +120,7 @@ export default compose(
 
 Login.propTypes = {
   dispatchSaga: PropTypes.func,
+  dispatchUser: PropTypes.func,
   authenticated: PropTypes.bool,
 }
 // http://kennel-staging.herokuapp.com/api/v1/login?auth[email]=test@test.com&auth[password]=test_password
