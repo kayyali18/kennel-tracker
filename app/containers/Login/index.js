@@ -64,7 +64,7 @@ export class Login extends React.PureComponent {
     return (
       <Wrapper>
         <Helmet>
-          <title>Welcome to Kennel Tracker</title>
+          <title>Login</title>
           <meta name="Login Page" content="Login Page for users" />
         </Helmet>
         <Form
