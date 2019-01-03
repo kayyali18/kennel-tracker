@@ -2,28 +2,49 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export default styled(Link)`
-  display: inline-flex;
-  padding: 0.25em 2em;
-  margin: calc(10px + 2 * ((100vw - 320px) / 680));
+  margin: 0 auto;
   text-decoration: none;
-  border-radius: 8px;
-  -webkit-font-smoothing: antialiased;
-  -webkit-touch-callout: none;
-  user-select: none;
-  cursor: pointer;
-  outline: 0;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: bold;
-  font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  text-align: center;
+  color: #e7b7d3;
   border: none;
-  color: #595959;
+  position: relative;
+  height: 35px;
+  font-size: 1.6em;
+  margin: 15px;
 
-  &:active {
-    color: #595959;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+
+  &:before,
+  &:after {
+    content: '';
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #a85184;
+    transition: 400ms ease all;
   }
 
+  &:after {
+    right: inherit;
+    top: inherit;
+    text-decoration: none;
+    left: 0;
+    bottom: 0;
+  }
   &:hover {
-    background: linear-gradient(#a5a5a5, #f2f2f2);
-    color: #595959;
+    text-decoration: none;
+    color: #a85184;
+  }
+
+  &:hover:before,
+  &:hover:after {
+    width: 100%;
+    text-decoration: none;
+    transition: 800ms ease all;
   }
 `

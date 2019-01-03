@@ -33,6 +33,7 @@ import { makeSelectRunInfo } from './selectors'
 import reducer from './reducer'
 import saga from './saga'
 import { runInfoSagaWatcher } from './actions'
+import './HomePage.css'
 
 /* eslint-disable */
 export class HomePage extends React.PureComponent {
@@ -62,6 +63,7 @@ export class HomePage extends React.PureComponent {
     try {
       dogInfo = data.data.map(dog => (
         <Div
+          key={dog.attributes.runNumber}
           className="run-info"
           onClick={() => this.handleDogs(dog.attributes)}
           onKeyDown={() => this.handleDogs(dog.attributes)}
@@ -100,10 +102,10 @@ export class HomePage extends React.PureComponent {
             content="Content explaining current dogs in the Kennel"
           />
         </Helmet>
-        <H1>Kennel Tracker</H1>
-        <Wrapper>
-          <div>{dogInfo}</div>
-        </Wrapper>
+        <section className="home">
+          <H1>Kennel Tracker</H1>
+          <div className="dogs">{dogInfo}</div>
+        </section>
       </div>
     )
   }

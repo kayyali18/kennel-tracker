@@ -19,6 +19,7 @@ import DogInfo from 'components/DogInfo'
 import Calendar from 'containers/Calendar'
 import Login from 'containers/Login'
 import NotFoundPage from 'containers/NotFoundPage/Loadable'
+import './App.css'
 
 import GlobalStyle from '../../global-styles'
 

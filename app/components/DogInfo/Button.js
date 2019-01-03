@@ -4,7 +4,7 @@ const Button = styled.div`
   margin: 0 auto;
   text-decoration: none;
   text-align: center;
-  color: grey;
+  color: white;
   border: none;
   position: relative;
   height: 35px;
@@ -29,6 +29,7 @@ const Button = styled.div`
   }
 
   &:after {
+    outline: none;
     right: inherit;
     top: inherit;
     text-decoration: none;
@@ -36,12 +37,14 @@ const Button = styled.div`
     bottom: 0;
   }
   &:hover {
+    outline: none;
     text-decoration: none;
-    color: grey;
+    color: white;
   }
 
   &:hover:before,
   &:hover:after {
+    outline: none;
     width: 100%;
     text-decoration: none;
     transition: 800ms ease all;
