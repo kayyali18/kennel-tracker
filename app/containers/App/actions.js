@@ -66,15 +66,13 @@ export function apiLoadingError(error) {
 /**
  * Dispatched when login credentials are credible
  *
- * @param  {object} response The response with expiration date and bearer token
  *
- * @return {object} An action object with a type of LOGIN_SUCCESS passing the response
+ * @return {object} An action object with a type of LOGIN_SUCCESS setting authentication to true
  */
 
-export function loginSuccess(response) {
+export function loginSuccess() {
   return {
     type: LOGIN_SUCCESS,
-    response,
   }
 }
 

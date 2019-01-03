@@ -15,7 +15,22 @@
  *    }
  */
 
-import { RUN_TOKEN_SAGA } from './constants'
+import { UPDATE_TOKEN, RUN_TOKEN_SAGA } from './constants'
+
+/**
+ * Dispatched when login credentials are submitted
+ *
+ * @param  {object} response The response with expiration date and bearer token
+ *
+ * @return {object} An action object with a type of UPDATE_TOKEN passing the response
+ */
+
+export function updateToken(response) {
+  return {
+    type: UPDATE_TOKEN,
+    response,
+  }
+}
 
 /**
  * Fires off saga watch for this action type

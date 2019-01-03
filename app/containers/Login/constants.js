@@ -9,4 +9,5 @@
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
 
+export const UPDATE_TOKEN = 'kennel-tracker/Home/UPDATE_TOKEN'
 export const RUN_TOKEN_SAGA = 'kennel-tracker/Home/RUN_TOKEN_SAGA'

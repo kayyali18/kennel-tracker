@@ -3,7 +3,7 @@
  */
 
 import { call, put, takeLatest } from 'redux-saga/effects'
-import { loginError } from 'containers/App/actions'
+import { loginError, loginSuccess } from 'containers/App/actions'
 import { RUN_TOKEN_SAGA } from 'containers/Login/constants'
 
 import request from 'utils/request'
@@ -18,16 +18,15 @@ export function* getToken() {
   const optionsObj = {
     method: 'POST',
     headers: {
-      Authorization:
-        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxLCJleHAiOjE1NDcxMDM4MTF9.YDq4GlviuBIewD0MWcx8BDcEiSPtNJy8VS0HvQNIjk0',
+      'Content-Type': 'application/json',
     },
   }
 
   try {
     // Call our request helper (see 'utils/request')
     const response = yield call(request, requestURL, optionsObj)
-    // fire an action that saves in LS
-    // create an action that pulls from LS
+    localStorage.setItem('token', JSON.stringify(response.jwt))
+    yield put(loginSuccess())
   } catch (err) {
     yield put(loginError(err))
   }
