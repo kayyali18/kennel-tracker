@@ -42,7 +42,7 @@ export default class Login extends Component {
   render() {
     return (
       <Wrapper>
-        <Form onSubmit={e => this.handleSubmit(e)}>
+        <Form onSubmit={e => e.preventDefault()}>
           <Input
             onChange={this.handleChange}
             value={this.state.email}
@@ -59,11 +59,7 @@ export default class Login extends Component {
             placeholder="Password"
             aria-label="Password"
           />
-          <LoginBtn
-            size="2em"
-            text="Login"
-            onClick={e => this.handleSubmit(e)}
-          />
+          <LoginBtn ref="loginBtn" size="2em" text="Login" />
         </Form>
       </Wrapper>
     )
