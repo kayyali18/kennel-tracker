@@ -2,6 +2,12 @@ language: node_js
 
 node_js:
   - 'node'
+  - 'lts/*'
+
+script:
+  - node ./internals/scripts/generate-templates-for-linting
+  - npm test -- --maxWorkers
+  - npm run build
 
 before_install:
   - export CHROME_BIN=chromium-browser
@@ -9,8 +15,7 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 
 notifications:
-  email:
-    on_failure: change
+  email: false
 
 after_success: 'npm run coveralls'
 
