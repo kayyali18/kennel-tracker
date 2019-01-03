@@ -8,6 +8,7 @@ import './DogInfo.css'
 const DogInfo = props => {
   if (!props.location.state) {
     return <Redirect to="/login" />
+  } else {
     return (
       <div className="single-dog">
         <div className="dog-section">
