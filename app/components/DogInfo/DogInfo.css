@@ -1,0 +1,32 @@
+.single-dog {
+  height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  overflow: hidden;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url('https://i.imgur.com/AuTodS8.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 1;
+}
+
+.dog-info {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #fff;
+}
+
+.text {
+  position: fixed;
+  left: 200px;
+  top: 130px;
+  background-color: black;
+  opacity: 0.5;
+  width: 500px;
+  text-align: center;
+  overflow-y: hidden;
+}
