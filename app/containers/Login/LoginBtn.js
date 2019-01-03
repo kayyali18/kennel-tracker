@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 
-const LoginBtn = styled.button.attrs({
+const LoginBtn = styled.input.attrs({
   // we can define static props
   type: 'submit',
+  'aria-label': 'Login',
+  value: props => props.text || 'Submit',
 
   // or we can define dynamic ones
   margin: props => props.size || '1em',

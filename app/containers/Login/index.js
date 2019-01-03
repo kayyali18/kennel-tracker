@@ -15,10 +15,15 @@ export default class Login extends Component {
       loginError: '',
     }
   }
+
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value,
     })
+  }
+
+  handleSubmit = e => {
+    e.prevent.default()
   }
 
   userWarning = async (type, warning) => {
@@ -37,7 +42,7 @@ export default class Login extends Component {
   render() {
     return (
       <Wrapper>
-        <Form>
+        <Form onSubmit={e => this.handleSubmit(e)}>
           <Input
             onChange={this.handleChange}
             value={this.state.email}
@@ -54,7 +59,11 @@ export default class Login extends Component {
             placeholder="Password"
             aria-label="Password"
           />
-          <LoginBtn>Login</LoginBtn>
+          <LoginBtn
+            size="2em"
+            text="Login"
+            onClick={e => this.handleSubmit(e)}
+          />
         </Form>
       </Wrapper>
     )
