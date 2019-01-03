@@ -24,7 +24,8 @@ import './App.css'
 import GlobalStyle from '../../global-styles'
 
 const AppWrapper = styled.div`
-  height: 100%;
+  min-height: 100vh;
+  background: linear-gradient(#ff700b, #ff275f);
 `
 
 export default function App() {

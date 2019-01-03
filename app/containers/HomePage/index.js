@@ -14,13 +14,18 @@ import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
+import { Redirect } from 'react-router-dom'
 import { createStructuredSelector } from 'reselect'
 
 import { DAEMON } from 'utils/constants'
 import injectReducer from 'utils/injectReducer'
 import injectSaga from 'utils/injectSaga'
-import { makeSelectLoading, makeSelectError } from 'containers/App/selectors'
-import Loading from 'components/Loading'
+import {
+  makeSelectLoading,
+  makeSelectError,
+  makeSelectAuthenticated,
+} from 'containers/App/selectors'
+import Wrapper from './Wrapper'
 import H1 from './H1'
 import Div from './Div'
 import PTag from './PTag'
@@ -52,7 +57,8 @@ export class HomePage extends React.PureComponent {
   }
 
   render() {
-    const { data } = this.props
+    const { data, authenticated } = this.props
+    if (!authenticated) return <Redirect to="/login" />
     let dogInfo
     try {
       dogInfo = data.data.map(dog => (
@@ -87,10 +93,6 @@ export class HomePage extends React.PureComponent {
       console.log('error')
     }
 
-    if (!data) {
-      return <Loading />
-    }
-
     return (
       <div>
         <Helmet>
@@ -117,6 +119,7 @@ const mapStateToProps = createStructuredSelector({
   loading: makeSelectLoading(),
   error: makeSelectError(),
   data: makeSelectRunInfo(),
+  authenticated: makeSelectAuthenticated(),
 })
 
 const withConnect = connect(
@@ -137,4 +140,5 @@ HomePage.propTypes = {
   data: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   history: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
   dispatchSaga: PropTypes.func,
+  authenticated: PropTypes.bool,
 }
