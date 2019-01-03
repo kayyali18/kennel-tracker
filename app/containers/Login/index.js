@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Wrapper from './Wrapper'
 import Form from './Form'
 import Input from './Input'
+import LoginBtn from './LoginBtn'
 
 /* eslint-disable */
 export default class Login extends Component {
@@ -41,8 +42,8 @@ export default class Login extends Component {
             onChange={this.handleChange}
             value={this.state.email}
             name="email"
-            placeholder="email"
-            aria-label="email-input"
+            placeholder="E-mail"
+            aria-label="Email"
           />
           <Input
             className="password-input"
@@ -50,17 +51,13 @@ export default class Login extends Component {
             type="password"
             value={this.state.password}
             name="password"
-            placeholder="password"
-            aria-label="password-input"
+            placeholder="Password"
+            aria-label="Password"
           />
-          <Input
-            className="login-submit"
-            type="submit"
-            value="login"
-            aria-label="login-submit-button"
-          />
+          <LoginBtn>Login</LoginBtn>
         </Form>
       </Wrapper>
     )
   }
 }
+// http://kennel-staging.herokuapp.com/api/v1/login?auth[email]=test@test.com&auth[password]=test_password
