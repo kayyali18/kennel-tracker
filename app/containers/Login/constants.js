@@ -11,3 +11,5 @@
 
 export const UPDATE_TOKEN = 'kennel-tracker/Home/UPDATE_TOKEN'
 export const RUN_TOKEN_SAGA = 'kennel-tracker/Home/RUN_TOKEN_SAGA'
+export const SUBMIT_USER_CREDS = 'kennel-tracker/Home/SUBMIT_USER_CREDS'
+export const CLEAR_USER_CREDS = 'kennel-tracker/Home/CLEAR_USER_CREDS'

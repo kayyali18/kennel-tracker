@@ -12,7 +12,6 @@ import { Switch, Route } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 
-import Header from 'components/Header'
 import HomePage from 'containers/HomePage/Loadable'
 import BookingPage from 'containers/BookingPage/Loadable'
 import DogInfo from 'components/DogInfo'
@@ -37,7 +36,6 @@ export default function App() {
           content="Application to track Kennel Occupancy"
         />
       </Helmet>
-      <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/dog" component={DogInfo} />

@@ -17,6 +17,7 @@ import { compose } from 'redux'
 import { Redirect } from 'react-router-dom'
 import { createStructuredSelector } from 'reselect'
 
+import Header from 'components/Header'
 import { DAEMON } from 'utils/constants'
 import injectReducer from 'utils/injectReducer'
 import injectSaga from 'utils/injectSaga'
@@ -25,10 +26,10 @@ import {
   makeSelectError,
   makeSelectAuthenticated,
 } from 'containers/App/selectors'
-import { makeSelectRunInfo } from './selectors'
 import reducer from './reducer'
 import saga from './saga'
 import { runInfoSagaWatcher } from './actions'
+import { makeSelectRunInfo } from './selectors'
 import './HomePage.css'
 import H1 from './H1'
 import Div from './Div'
@@ -101,6 +102,7 @@ export class HomePage extends React.PureComponent {
             content="Content explaining current dogs in the Kennel"
           />
         </Helmet>
+        <Header />
         <section className="home">
           <H1>Kennel Tracker</H1>
           <div className="dogs">{dogInfo}</div>

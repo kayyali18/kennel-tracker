@@ -2,9 +2,10 @@
  * Gets the token from the kennel_tracker API
  */
 
-import { call, put, takeLatest } from 'redux-saga/effects'
+import { call, put, takeLatest, select } from 'redux-saga/effects'
 import { loginError, loginSuccess } from 'containers/App/actions'
 import { RUN_TOKEN_SAGA } from 'containers/Login/constants'
+import { makeSelectEmail, makeSelectPassword } from 'containers/Login/selectors'
 
 import request from 'utils/request'
 
@@ -14,7 +15,9 @@ import request from 'utils/request'
 
 export function* getToken() {
   // Post user credentials
-  const requestURL = `http://kennel-staging.herokuapp.com/api/v1/login?auth[email]=test@test.com&auth[password]=test_password`
+  const email = yield select(makeSelectEmail())
+  const password = yield select(makeSelectPassword())
+  const requestURL = `http://kennel-staging.herokuapp.com/api/v1/login?auth[email]=${email}&auth[password]=${password}`
   const optionsObj = {
     method: 'POST',
     headers: {

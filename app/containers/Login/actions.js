@@ -15,7 +15,40 @@
  *    }
  */
 
-import { UPDATE_TOKEN, RUN_TOKEN_SAGA } from './constants'
+import {
+  UPDATE_TOKEN,
+  RUN_TOKEN_SAGA,
+  SUBMIT_USER_CREDS,
+  CLEAR_USER_CREDS,
+} from './constants'
+
+/**
+ * Dispatched when login credentials are submitted
+ *
+ * @param  {object} user The user with object containing email and pass
+ *
+ * @return {object} An action object with a type of SUBMIT_USER_CREDS passing the response
+ */
+
+export function submitUserCredentials(user) {
+  return {
+    type: SUBMIT_USER_CREDS,
+    user,
+  }
+}
+
+/**
+ * Dispatched when login credentials are succesfull
+ *
+ *
+ * @return {object} An action object with a type of CLEAR_USER_CREDS passing the response
+ */
+
+export function clearUserCredentials() {
+  return {
+    type: CLEAR_USER_CREDS,
+  }
+}
 
 /**
  * Dispatched when login credentials are submitted
