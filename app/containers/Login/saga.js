@@ -26,7 +26,6 @@ export function* getToken() {
   try {
     // Call our request helper (see 'utils/request')
     const response = yield call(request, requestURL, optionsObj)
-    console.log(response)
     // fire an action that saves in LS
     // create an action that pulls from LS
   } catch (err) {
