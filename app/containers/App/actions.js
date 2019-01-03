@@ -71,7 +71,7 @@ export function apiLoadingError(error) {
  * @return {object} An action object with a type of LOGIN_SUCCESS passing the response
  */
 
-export function loginSucces(response) {
+export function loginSuccess(response) {
   return {
     type: LOGIN_SUCCESS,
     response,

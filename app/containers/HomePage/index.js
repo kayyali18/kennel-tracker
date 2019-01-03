@@ -25,15 +25,14 @@ import {
   makeSelectError,
   makeSelectAuthenticated,
 } from 'containers/App/selectors'
-import Wrapper from './Wrapper'
-import H1 from './H1'
-import Div from './Div'
-import PTag from './PTag'
 import { makeSelectRunInfo } from './selectors'
 import reducer from './reducer'
 import saga from './saga'
 import { runInfoSagaWatcher } from './actions'
 import './HomePage.css'
+import H1 from './H1'
+import Div from './Div'
+import PTag from './PTag'
 
 /* eslint-disable */
 export class HomePage extends React.PureComponent {

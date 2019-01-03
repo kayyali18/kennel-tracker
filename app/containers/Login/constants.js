@@ -1,5 +1,5 @@
 /*
- * HomePageConstants
+ * Login Constants
  * Each action has a corresponding type, which the reducer knows and picks up on.
  * To avoid weird typos between the reducer and the actions, we save them as
  * constants here. We prefix them with 'yourproject/YourComponent' so we avoid
@@ -9,6 +9,4 @@
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
 
-export const DISPLAY_CURR_DOGS = 'kennel-tracker/Home/DISPLAY_CURR_DOGS'
-
-export const RUN_CURR_DOGS_SAGA = 'kennel-tracker/Home/RUN_CURR_DOGS_SAGA'
+export const RUN_TOKEN_SAGA = 'kennel-tracker/Home/RUN_TOKEN_SAGA'
