@@ -27,7 +27,7 @@ const initialState = fromJS({
   dogData: false,
   searchQuery: '',
   user: {},
-  authenticated: false,
+  authenticated: true,
 })
 
 function appReducer(state = initialState, action) {
