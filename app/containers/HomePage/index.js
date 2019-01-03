@@ -20,7 +20,6 @@ import { DAEMON } from 'utils/constants'
 import injectReducer from 'utils/injectReducer'
 import injectSaga from 'utils/injectSaga'
 import { makeSelectLoading, makeSelectError } from 'containers/App/selectors'
-import Loading from 'components/Loading'
 import Wrapper from './Wrapper'
 import H1 from './H1'
 import Div from './Div'
@@ -84,10 +83,6 @@ export class HomePage extends React.PureComponent {
       ))
     } catch {
       console.log('error')
-    }
-
-    if (!data) {
-      return <Loading />
     }
 
     return (
