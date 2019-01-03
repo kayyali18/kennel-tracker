@@ -3,8 +3,6 @@
 exports[`<Wrapper /> should match snapshot 1`] = `
 .c0 {
   margin: 220px auto;
-  height: 200px;
-  width: 500px;
   background: #fff;
   border: 1px solid grey;
 }
