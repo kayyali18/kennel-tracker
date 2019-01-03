@@ -18,12 +18,15 @@ const InputWrapper = styled.div`
     font-weight: 300;
   }
 
-  input[type='text'] {
-    ~ label {
-      &::before {
-        content: '/f007';
-      }
-    }
+  input[type='date']::before {
+    content: attr(data-placeholder);
+    color: #aaa;
+    margin-right: 0.5em;
+  }
+
+  input[type='date']:focus:before,
+  input[type='date']:valid:before {
+    content: '';
   }
 
   label:focus {

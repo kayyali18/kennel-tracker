@@ -18,6 +18,7 @@ export function* getToken() {
   const email = yield select(makeSelectEmail())
   const password = yield select(makeSelectPassword())
   const requestURL = `http://kennel-staging.herokuapp.com/api/v1/login?auth[email]=${email}&auth[password]=${password}`
+
   const optionsObj = {
     method: 'POST',
     headers: {

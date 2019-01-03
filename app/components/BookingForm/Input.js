@@ -5,15 +5,13 @@ import InputWrapper from './InputWrapper'
 function Input(props) {
   return (
     <InputWrapper>
-      <label>
-        <input
-          id={props.name}
-          autoComplete="false"
-          required
-          type={props.type}
-          placeholder={props.placeholder}
-        />
-      </label>
+      <input
+        id={props.name}
+        autoComplete="true"
+        required
+        type={props.type}
+        placeholder={props.placeholder}
+      />
     </InputWrapper>
   )
 }
