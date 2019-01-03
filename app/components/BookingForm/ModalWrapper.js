@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const ModalWrapper = styled.div`
-  background: #3e363f;
+  background: #3e363f7c;
   border-radius: 2px;
   padding: 20px;
   width: 100;

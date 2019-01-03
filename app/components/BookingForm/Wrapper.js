@@ -1,33 +1,18 @@
 import styled from 'styled-components'
 
 const Form1 = styled.section`
-  background-image: url(https://unsplash.it/1400/799);
+  background-image: url(https://images.unsplash.com/photo-1521570462976-79468098ea83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: #3e363f;
 
-  display: grid;
-  grid-gap: 4rem;
-  grid-template-areas: 'input .';
-  height: 80vh;
+  min-height: 80vh;
 
-  position: absolute;
   overflow: auto;
-  width: 100%;
+
   input {
     border: 2px solid black;
-    position: relative;
-    height: 50px;
-  }
-
-  input:nth-child(odd) {
-    top: 2rem;
-    left: 4rem;
-  }
-  input:nth-child(even) {
-    top: 6rem;
-    right: 4rem;
   }
 
   .form-enter {
