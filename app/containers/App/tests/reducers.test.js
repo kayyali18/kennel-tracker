@@ -11,6 +11,8 @@ describe('appReducer', () => {
       error: false,
       dogData: false,
       searchQuery: '',
+      user: {},
+      authenticated: false,
     })
   })
   it('should return the initial state', () => {

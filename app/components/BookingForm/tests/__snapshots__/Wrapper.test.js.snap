@@ -2,15 +2,61 @@
 
 exports[`<Wrapper /> should match snapshot 1`] = `
 .c0 {
-  border: 3px solid #fff;
-  border-radius: 15px;
-  height: 60vh;
-  width: 80vw;
-  margin: 4rem calc(100vw * 0.08);
+  background-image: url(https://unsplash.it/1400/799);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #3e363f;
+  display: grid;
+  grid-gap: 4rem;
+  grid-template-areas: 'input .';
+  height: 80vh;
   position: absolute;
+  overflow: auto;
+  width: 100%;
 }
 
-<article
+.c0 input {
+  border: 2px solid black;
+  position: relative;
+  height: 50px;
+}
+
+.c0 input:nth-child(odd) {
+  top: 2rem;
+  left: 4rem;
+}
+
+.c0 input:nth-child(even) {
+  top: 6rem;
+  right: 4rem;
+}
+
+.c0 .form-enter {
+  margin-top: 30px;
+  opacity: 0.01;
+}
+
+.c0 .form-enter-active {
+  margin-top: 0px;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease,margin 0.5s ease;
+  transition: opacity 0.5s ease,margin 0.5s ease;
+}
+
+.c0 .form-leave {
+  margin-top: 0px;
+  opacity: 1;
+}
+
+.c0 .form-leave-active {
+  margin-top: -30px;
+  opacity: 0.01;
+  -webkit-transition: opacity 0.3s ease,margin 0.5s ease;
+  transition: opacity 0.3s ease,margin 0.5s ease;
+}
+
+<section
   className="c0"
 />
 `;

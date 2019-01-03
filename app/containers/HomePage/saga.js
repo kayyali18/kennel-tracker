@@ -19,7 +19,7 @@ export function* getRunInfo() {
     method: 'GET',
     headers: {
       Authorization:
-        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxLCJleHAiOjE1NDY0NjY5ODF9.b6lj-6mutJtoFYlr2MCMF2kU1WEP-2KCaMcMvnVKms8',
+        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxLCJleHAiOjE1NDY0ODYyNTd9.FaruCWR9uOwOKmrpNG__dOljKr2uYcxl3KpCn3chS_0',
     },
   }
   // const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
@@ -28,7 +28,6 @@ export function* getRunInfo() {
   try {
     // Call our request helper (see 'utils/request')
     const results = yield call(request, requestURL, optionsObj)
-    console.log('HELPP', results)
     yield put(displayCurrDogs(results))
     yield put(apiLoaded(results))
   } catch (err) {

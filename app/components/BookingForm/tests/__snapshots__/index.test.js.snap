@@ -1,42 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<BookingForm /> should match snapshot 1`] = `
-<article
-  className="Wrapper-sc-1w8d0gj-0 dGnIKR"
+<section
+  className="Wrapper__Form1-sc-1w8d0gj-0 jxBreL"
 >
-  <div>
-    <form
-      className="Form1-sc-1pwvulr-0 jOSPTR"
+  <span>
+    <div
+      className="ModalWrapper-evwo18-0 jDiLFg"
     >
-      <input
-        placeholder="Name"
-        type="text"
-      />
-      <input
-        placeholder="Address"
-        type="text"
-      />
-      <input
-        placeholder="Cellphone"
-        type="number"
-      />
-      <input
-        placeholder="Homephone"
-        type="number"
-      />
-      <input
-        placeholder="E-mail"
-        type="email"
-      />
-      <input
-        placeholder="Emergency Contact Name"
-        type="text"
-      />
-      <input
-        placeholder="Emergency Contact #"
-        type="number"
-      />
-    </form>
-  </div>
-</article>
+      <form
+        className="ModalForm"
+      >
+        <div
+          className="InputWrapper-sc-1ywlnw8-0 hqLpje"
+        >
+          <label>
+            <input
+              autoComplete="false"
+              placeholder="John Johnson"
+              required={true}
+              type="text"
+            />
+          </label>
+        </div>
+        <div
+          className="InputWrapper-sc-1ywlnw8-0 hqLpje"
+        >
+          <label>
+            <input
+              autoComplete="false"
+              placeholder="JohnsonAndJohnson@gmail.com"
+              required={true}
+              type="email"
+            />
+          </label>
+        </div>
+        <div
+          className="InputWrapper-sc-1ywlnw8-0 hqLpje"
+        >
+          <label>
+            <input
+              autoComplete="false"
+              placeholder="password"
+              required={true}
+              type="password"
+            />
+          </label>
+        </div>
+        <button
+          type="submit"
+        >
+          Log in 
+          <i
+            className="fa fa-fw fa-chevron-right"
+          />
+        </button>
+      </form>
+    </div>
+  </span>
+</section>
 `;

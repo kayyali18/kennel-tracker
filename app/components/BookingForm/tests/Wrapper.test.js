@@ -12,6 +12,6 @@ describe('<Wrapper />', () => {
 
   it('should render a article', () => {
     const renderedComponent = renderer.create(<Wrapper />).toJSON()
-    expect(renderedComponent.type).toEqual('article')
+    expect(renderedComponent.type).toEqual('section')
   })
 })

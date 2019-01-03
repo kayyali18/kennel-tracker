@@ -14,6 +14,12 @@ const makeSelectLoading = () =>
 const makeSelectError = () =>
   createSelector(selectGlobal, globalState => globalState.get('error'))
 
+const makeSelectUser = () =>
+  createSelector(selectGlobal, globalState => globalState.get('user'))
+
+const makeSelectAuthenticated = () =>
+  createSelector(selectGlobal, globalState => globalState.get('authenticated'))
+
 const makeSelectSearchQuery = () =>
   createSelector(selectGlobal, globalState => globalState.get('searchQuery'))
 
@@ -33,4 +39,6 @@ export {
   makeSelectSearchQuery,
   makeSelectLocation,
   makeSelectData,
+  makeSelectAuthenticated,
+  makeSelectUser,
 }
