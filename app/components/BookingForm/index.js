@@ -13,7 +13,7 @@ function BookingForm(props) {
   let form3
   if (!props.mounted) {
     form1 = <Modal1 onSubmit={props.handleSubmit} />
-    form2 = <Modal2 onSubmit={props.handleSubmit} count={props.petCount} />
+    form2 = <Modal2 onSubmit={props.handleSubmit} />
     form3 = <Modal3 onSubmit={props.handleSubmit} />
   }
 

@@ -6,7 +6,8 @@ function Input(props) {
   return (
     <InputWrapper>
       <input
-        id={props.name}
+        onChange={props.handleChange}
+        id={props.id}
         autoComplete="true"
         required
         type={props.type}

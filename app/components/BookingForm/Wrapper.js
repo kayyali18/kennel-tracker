@@ -1,10 +1,7 @@
 import styled from 'styled-components'
 
 const Form1 = styled.section`
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: #3e363f;
+  color: #fff;
 
   max-height: 70vh;
 

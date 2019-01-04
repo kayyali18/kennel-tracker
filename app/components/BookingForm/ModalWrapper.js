@@ -1,10 +1,24 @@
 import styled from 'styled-components'
 
 const ModalWrapper = styled.div`
-  background: #3e363f7c;
+  background: #2d171175;
   border-radius: 2px;
-  padding: 20px;
-  width: 100;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+
+  h1 {
+  }
+
+  .ModalForm {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 2rem 5rem;
+    align-items: space-around;
+  }
 
   button {
     align-items: center;
@@ -14,7 +28,7 @@ const ModalWrapper = styled.div`
     color: white;
     display: flex;
 
-    font-family: 'Lato';
+    font-family: 'Quicksand';
     font-size: 13px;
     font-weight: 500;
     justify-content: center;
@@ -23,6 +37,7 @@ const ModalWrapper = styled.div`
     padding: 10px 9px 10px 11px;
     text-transform: uppercase;
     width: 100%;
+    height: 80px;
 
     .fa {
       font-size: 12px;
