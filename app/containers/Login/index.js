@@ -35,7 +35,6 @@ export class Login extends React.PureComponent {
   }
 
   handleSubmit = e => {
-    //fire of saga watcher action
     const { dispatchSaga, dispatchUser } = this.props
     const { email, password } = this.state
     const user = { email, password }
