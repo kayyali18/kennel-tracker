@@ -40,6 +40,17 @@ start the server:
 * Prettier
 * stylelint
 
+## Design and Comps
+
+<img width="1437" alt="screen shot 2019-01-03 at 11 21 29 pm" src="https://user-images.githubusercontent.com/39738807/50675918-6a150780-0fae-11e9-92ea-199e4b3ece44.png">
+<img width="1438" alt="screen shot 2019-01-03 at 11 21 17 pm" src="https://user-images.githubusercontent.com/39738807/50675921-6bdecb00-0fae-11e9-8909-376dfac00760.png">
+<img width="1438" alt="screen shot 2019-01-03 at 11 21 08 pm" src="https://user-images.githubusercontent.com/39738807/50675922-6da88e80-0fae-11e9-937a-aea75151bd34.png">
+
+## Early Wireframes
+
+<img width="786" alt="screen shot 2019-01-03 at 11 20 27 pm" src="https://user-images.githubusercontent.com/39738807/50675976-c5df9080-0fae-11e9-8738-fb6f2bb97ae6.png">
+<img width="590" alt="screen shot 2019-01-03 at 11 20 38 pm" src="https://user-images.githubusercontent.com/39738807/50675978-c6782700-0fae-11e9-817c-c6e81164b071.png">
+
 ## Contibutors 
 
 #### Laura Shamus - Frontend Developer
@@ -49,3 +60,4 @@ start the server:
 #### Jesse Ling - Backend Developer
 
 #### Mike McKee - Backend Developer
+
