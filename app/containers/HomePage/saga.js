@@ -14,7 +14,7 @@ import request from 'utils/request'
  */
 export function* getRunInfo() {
   // Select query from store
-  const requestURL = `//kennel-staging.herokuapp.com/api/v1/reservations/current`
+  const requestURL = `https://kennel-staging.herokuapp.com/api/v1/reservations/current`
   const optionsObj = {
     method: 'GET',
     headers: {
