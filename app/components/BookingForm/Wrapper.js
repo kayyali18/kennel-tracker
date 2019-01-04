@@ -1,13 +1,12 @@
 import styled from 'styled-components'
 
 const Form1 = styled.section`
-  background-image: url(https://images.unsplash.com/photo-1521570462976-79468098ea83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: #3e363f;
 
-  min-height: 80vh;
+  max-height: 70vh;
 
   overflow: auto;
 

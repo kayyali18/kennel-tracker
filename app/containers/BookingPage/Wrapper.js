@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
-const Wrapper = styled.section`
-  height: 100vh;
-  width: 80%;
+const Wrapper = styled.main`
+  min-height: 100vh;
+  min-width: 100vw;
+
+  display: grid;
 `
 export default Wrapper
