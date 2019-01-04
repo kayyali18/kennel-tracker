@@ -2,34 +2,13 @@
 
 exports[`<Wrapper /> should match snapshot 1`] = `
 .c0 {
-  background-image: url(https://unsplash.it/1400/799);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: #3e363f;
-  display: grid;
-  grid-gap: 4rem;
-  grid-template-areas: 'input .';
-  height: 80vh;
-  position: absolute;
+  color: #fff;
+  max-height: 70vh;
   overflow: auto;
-  width: 100%;
 }
 
 .c0 input {
   border: 2px solid black;
-  position: relative;
-  height: 50px;
-}
-
-.c0 input:nth-child(odd) {
-  top: 2rem;
-  left: 4rem;
-}
-
-.c0 input:nth-child(even) {
-  top: 6rem;
-  right: 4rem;
 }
 
 .c0 .form-enter {

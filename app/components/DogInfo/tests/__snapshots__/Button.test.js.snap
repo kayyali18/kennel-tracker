@@ -6,7 +6,7 @@ exports[`<Button /> should match snapshot 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   text-align: center;
-  color: grey;
+  color: white;
   border: none;
   position: relative;
   height: 35px;
@@ -35,6 +35,7 @@ exports[`<Button /> should match snapshot 1`] = `
 }
 
 .c0:after {
+  outline: none;
   right: inherit;
   top: inherit;
   -webkit-text-decoration: none;
@@ -44,13 +45,15 @@ exports[`<Button /> should match snapshot 1`] = `
 }
 
 .c0:hover {
+  outline: none;
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: grey;
+  color: white;
 }
 
 .c0:hover:before,
 .c0:hover:after {
+  outline: none;
   width: 100%;
   -webkit-text-decoration: none;
   text-decoration: none;

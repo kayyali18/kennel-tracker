@@ -6,7 +6,7 @@ exports[`<Form /> should match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 450px;
+  width: 700px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -16,7 +16,6 @@ exports[`<Form /> should match snapshot 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   margin: 0 auto;
-  background: #fff;
 }
 
 <form

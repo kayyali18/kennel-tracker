@@ -2,9 +2,7 @@
 
 exports[`<Wrapper /> should match snapshot 1`] = `
 .c0 {
-  margin: 220px auto;
-  background: #fff;
-  border: 1px solid grey;
+  padding-top: 100px;
 }
 
 <section
