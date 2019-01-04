@@ -45,7 +45,7 @@ function appReducer(state = initialState, action) {
       return state.set('error', action.error).set('loading', false)
 
     case LOGIN_SUCCESS:
-      return state.set('user', action.results).set('authenticated', true)
+      return state.set('authenticated', true)
 
     case LOGIN_ERROR:
       return state.set('user', action.error).set('authenticated', false)

@@ -12,18 +12,19 @@ const InputWrapper = styled.div`
     border: 0;
     color: #fffce8;
     background: transparent;
-    font-family: 'Lato';
     flex: 1 0 auto;
-    font-size: 14px;
     font-weight: 300;
   }
 
-  input[type='text'] {
-    ~ label {
-      &::before {
-        content: '/f007';
-      }
-    }
+  input[type='date']::before {
+    content: attr(data-placeholder);
+    color: #aaa;
+    margin-right: 0.5em;
+  }
+
+  input[type='date']:focus:before,
+  input[type='date']:valid:before {
+    content: '';
   }
 
   label:focus {
@@ -44,6 +45,31 @@ const InputWrapper = styled.div`
     height: 30px;
     justify-content: center;
     width: 30px;
+  }
+  @import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+  input {
+    display: inline-block;
+    width: 155px;
+    margin: 0px;
+    padding: 10px 0 10px 15px;
+    line-height: 60px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 25px;
+    text-indent: 30px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  input:focus,
+  input:active {
+    color: black;
+    text-indent: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    &::-webkit-input-placeholder {
+      color: white;
+    }
   }
 `
 export default InputWrapper

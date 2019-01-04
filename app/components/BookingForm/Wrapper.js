@@ -1,33 +1,14 @@
 import styled from 'styled-components'
 
 const Form1 = styled.section`
-  background-image: url(https://unsplash.it/1400/799);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: #3e363f;
+  color: #fff;
 
-  display: grid;
-  grid-gap: 4rem;
-  grid-template-areas: 'input .';
-  height: 80vh;
+  max-height: 70vh;
 
-  position: absolute;
   overflow: auto;
-  width: 100%;
+
   input {
     border: 2px solid black;
-    position: relative;
-    height: 50px;
-  }
-
-  input:nth-child(odd) {
-    top: 2rem;
-    left: 4rem;
-  }
-  input:nth-child(even) {
-    top: 6rem;
-    right: 4rem;
   }
 
   .form-enter {

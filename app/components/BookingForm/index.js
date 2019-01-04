@@ -1,32 +1,32 @@
-// import React from 'react'
-// import PropTypes from 'prop-types'
-// import { CSSTransitionGroup } from 'react-transition-group'
+import React from 'react'
+import PropTypes from 'prop-types'
 
-// import Modal from './Modal'
-// import Wrapper from './Wrapper'
+import Modal1 from './Modal1'
+import Modal2 from './Modal2'
+import Modal3 from './Modal3'
+import Wrapper from './Wrapper'
 
-// function BookingForm(props) {
-//   let child
-//   if (!props.mounted) {
-//     child = <Modal onSubmit={props.handleSubmit} />
-//   }
+/* eslint-disable react */
+function BookingForm(props) {
+  let form1
+  let form2
+  let form3
+  if (!props.mounted) {
+    form1 = <Modal1 onSubmit={props.handleSubmit} />
+    form2 = <Modal2 onSubmit={props.handleSubmit} />
+    form3 = <Modal3 onSubmit={props.handleSubmit} />
+  }
 
-//   return (
-//     <Wrapper>
-//       <CSSTransitionGroup
-//         transitionName="form"
-//         transitionEnterTimeout={500}
-//         transitionLeaveTimeout={300}
-//       >
-//         {child}
-//       </CSSTransitionGroup>
-//     </Wrapper>
-//   )
-// }
+  if (props.stage == 1) return <Wrapper>{form1}</Wrapper>
+  if (props.stage == 2) return <Wrapper>{form2}</Wrapper>
+  if (props.stage == 3) return <Wrapper>{form3}</Wrapper>
+  return <Wrapper>Thank You</Wrapper>
+}
 
-// export default BookingForm
+export default BookingForm
 
-// BookingForm.propTypes = {
-//   handleSubmit: PropTypes.func,
-//   mounted: PropTypes.bool,
-// }
+BookingForm.propTypes = {
+  handleSubmit: PropTypes.func,
+  mounted: PropTypes.bool,
+  stage: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+}

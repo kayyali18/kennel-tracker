@@ -5,15 +5,14 @@ import InputWrapper from './InputWrapper'
 function Input(props) {
   return (
     <InputWrapper>
-      <label>
-        <input
-          id={props.name}
-          autoComplete="false"
-          required
-          type={props.type}
-          placeholder={props.placeholder}
-        />
-      </label>
+      <input
+        onChange={props.handleChange}
+        id={props.id}
+        autoComplete="true"
+        required
+        type={props.type}
+        placeholder={props.placeholder}
+      />
     </InputWrapper>
   )
 }
@@ -21,7 +20,8 @@ function Input(props) {
 export default Input
 
 Input.propTypes = {
-  name: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  handleChange: PropTypes.func,
   type: PropTypes.string,
   placeholder: PropTypes.string,
 }

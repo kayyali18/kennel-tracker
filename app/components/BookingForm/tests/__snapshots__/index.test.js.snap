@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BookingForm /> should match snapshot 1`] = `
+<section
+  className="Wrapper__Form1-sc-1w8d0gj-0 QbCAe"
+>
+  Thank You
+</section>
+`;
