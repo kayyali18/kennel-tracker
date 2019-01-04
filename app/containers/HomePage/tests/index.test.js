@@ -9,7 +9,7 @@ import { compose } from 'redux'
 import configureMockStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 import runInfoSagaWatcher from '../actions'
-import { mapDispatchToProps } from '../index'
+import { mapDispatchToProps, mapStateToProps } from '../index'
 
 const mockStore = configureMockStore()
 
@@ -49,5 +49,20 @@ describe('mapDispatchToProps', () => {
     mappedProps.dispatchSaga()
 
     expect(mockDispatch).toHaveBeenCalled
+  })
+})
+
+describe('mapStateToProps', () => {
+  it('should map the state to props', () => {
+    const currentDog = [{ dog: 'Pasta' }]
+
+    const expected = { currentDog }
+
+    const mockState = {
+      currentDog: currentDog,
+    }
+
+    const mappedProps = mapStateToProps(mockState)
+    expect(mappedProps).toEqual(expected)
   })
 })

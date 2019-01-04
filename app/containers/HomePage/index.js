@@ -116,7 +116,7 @@ export const mapDispatchToProps = dispatch => ({
   dispatchSaga: () => dispatch(runInfoSagaWatcher()),
 })
 
-const mapStateToProps = createStructuredSelector({
+export const mapStateToProps = createStructuredSelector({
   loading: makeSelectLoading(),
   error: makeSelectError(),
   data: makeSelectRunInfo(),
