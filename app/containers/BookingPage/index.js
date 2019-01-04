@@ -29,9 +29,22 @@ import { loadApi } from '../App/actions'
 /* eslint-disable react/prefer-stateless-function */
 
 export default class BookingPage extends React.PureComponent {
-  componentDidMount() {}
+  constructor() {
+    super()
+    this.state = {
+      stage: 1,
+    }
+  }
+
+  saveForm = inputs => {
+    this.setState({
+      ...inputs,
+      stage: this.state.stage + 1,
+    })
+  }
 
   render() {
+    const { stage } = this.state
     return (
       <Wrapper>
         <Helmet>
@@ -39,7 +52,7 @@ export default class BookingPage extends React.PureComponent {
           <meta name="Booking Page" content="Forms for booking reservations " />
         </Helmet>
         <Header />
-        <BookingForm stage="3" />
+        <BookingForm stage={stage} handleSubmit={this.saveForm} />
       </Wrapper>
     )
   }
