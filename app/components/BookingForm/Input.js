@@ -20,7 +20,8 @@ function Input(props) {
 export default Input
 
 Input.propTypes = {
-  name: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  handleChange: PropTypes.func,
   type: PropTypes.string,
   placeholder: PropTypes.string,
 }

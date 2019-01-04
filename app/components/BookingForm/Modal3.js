@@ -5,7 +5,7 @@ import Input from './Input'
 import ModalWrapper from './ModalWrapper'
 
 class Modal extends React.PureComponent {
-  constructor(props) {
+  constructor() {
     super()
     this.state = {}
   }

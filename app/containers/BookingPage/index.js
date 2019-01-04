@@ -37,9 +37,10 @@ export default class BookingPage extends React.PureComponent {
   }
 
   saveForm = inputs => {
+    let { stage } = this.state
+    stage += 1
     this.setState({
-      ...inputs,
-      stage: this.state.stage + 1,
+      formData: { ...inputs, stage },
     })
   }
 
