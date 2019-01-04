@@ -33,3 +33,23 @@ input:active {
   font-size: 60px;
   font-family: 'Quicksand', sans-serif;
 }
+
+.login-error-wrapper {
+  width: 350px;
+  top: 508px;
+  left: -50px;
+  right: 0;
+  transition: 0.25s;
+  opacity: 0;
+}
+.login-error-wrapper p {
+  position: absolute;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.login-error-active {
+  opacity: 1;
+  left: 0;
+}

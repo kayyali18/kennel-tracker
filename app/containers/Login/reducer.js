@@ -18,6 +18,10 @@ export const initialState = fromJS({
   user: { email: '', password: '' },
 })
 
+export const refreshedState = fromJS({
+  user: { email: '', password: '' },
+})
+
 function loginReducer(state = initialState, action) {
   switch (action.type) {
     case SUBMIT_USER_CREDS:
@@ -25,7 +29,7 @@ function loginReducer(state = initialState, action) {
         .setIn(['user', 'email'], action.user.email)
         .setIn(['user', 'password'], action.user.password)
     case CLEAR_USER_CREDS:
-      return state.set('user', {})
+      return refreshedState
     default:
       return state
   }

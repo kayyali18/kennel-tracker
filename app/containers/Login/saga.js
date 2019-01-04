@@ -33,6 +33,7 @@ export function* getToken() {
     yield put(loginSuccess())
   } catch (err) {
     yield put(loginError(err))
+    console.log(err)
   }
 }
 
