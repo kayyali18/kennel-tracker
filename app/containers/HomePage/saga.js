@@ -22,8 +22,6 @@ export function* getRunInfo() {
         'Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxLCJleHAiOjE1NDcxMDM4MTF9.YDq4GlviuBIewD0MWcx8BDcEiSPtNJy8VS0HvQNIjk0',
     },
   }
-  // const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
-  // requestURL = `${proxyUrl}${requestURL}`
 
   try {
     // Call our request helper (see 'utils/request')
