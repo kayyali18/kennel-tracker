@@ -9,7 +9,7 @@ import { compose } from 'redux'
 import configureMockStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 import runInfoSagaWatcher from '../actions'
-import { mapDispatchToProps, mapStateToProps } from '../index'
+import { mapDispatchToProps, mapStateToProps, handleDogs } from '../index'
 
 const mockStore = configureMockStore()
 
@@ -52,3 +52,27 @@ describe('mapDispatchToProps', () => {
   })
 })
 
+// describe('handleDogs', () => {
+//   it('should call set state', async () => {
+//     const mockPreventDefault = jest.fn()
+//     const handleDogs = jest.fn()
+//     const mockEvent = {
+//       target: {
+//         name: 'dog',
+//         value: 'dog',
+//       },
+//       preventDefault: mockPreventDefault,
+//     }
+//     const store = mockStore({})
+//     const defaultState = null
+//     const wrapper = shallow(
+//       <Provider store={store}>
+//         <HomePage />
+//       </Provider>,
+//     )
+//     const expected = 'dog'
+//     await wrapper.instance().handleDogs(mockEvent)
+
+//     expect(wrapper.state().origin).toEqual(expected)
+//   })
+// })
