@@ -21,7 +21,8 @@ import {
   POST_VET,
   POST_SUCCESS,
   POST_ERROR,
-  POST_SAGA,
+  RUN_POST_SAGA,
+  SET_PATH,
 } from './constants'
 
 /**
@@ -29,9 +30,9 @@ import {
  *
  * @return {object} An action object with a type of POST_SAGA
  */
-export function postSaga() {
+export function runPostSagaWatcher() {
   return {
-    type: POST_SAGA,
+    type: RUN_POST_SAGA,
   }
 }
 
@@ -74,6 +75,21 @@ export function postVet(body) {
   return {
     type: POST_VET,
     body,
+  }
+}
+
+/**
+ * Dispatched on form submit to set path for saga to fetch
+ *
+ * @param  {string} path The path for the saga to POST to
+ *
+ * @return {object} An action object with a type of POST_ERROR passing the path
+ */
+
+export function setPath(path) {
+  return {
+    type: SET_PATH,
+    path,
   }
 }
 
