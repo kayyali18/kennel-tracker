@@ -1,14 +1,11 @@
 import React from 'react'
-// import { FormattedMessage } from 'react-intl'
 import { shallow } from 'enzyme'
-// import renderer from 'react-test-renderer'
-// import { compose } from 'redux'
 import configureMockStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
-import Login from '../index'
+import Login, { mapDispatchToProps } from '../index'
 
 const mockStore = configureMockStore()
-
+/* eslint-disable */
 describe('<Login />', () => {
   it('should match snapshot', () => {
     const store = mockStore({})
@@ -29,5 +26,16 @@ describe('<Login />', () => {
       </Provider>,
     )
     expect(wrapper.state()).toEqual(defaultState)
+  })
+})
+
+describe('mapDispatchToProps', () => {
+  it('calls dispatch with a runTokenSagaWatcher action when dispatchSaga is called', () => {
+    const mockDispatch = jest.fn()
+
+    const mappedProps = mapDispatchToProps(mockDispatch)
+    mappedProps.dispatchSaga()
+
+    expect(mockDispatch).toHaveBeenCalled
   })
 })

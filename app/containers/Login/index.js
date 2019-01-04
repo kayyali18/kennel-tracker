@@ -106,22 +106,22 @@ export class Login extends React.PureComponent {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   dispatchSaga: () => dispatch(runTokenSagaWatcher()),
   dispatchUser: user => dispatch(submitUserCredentials(user)),
   dispatchError: error => dispatch(loginError(error)),
 })
 
-const mapStateToProps = createStructuredSelector({
+export const mapStateToProps = createStructuredSelector({
   authenticated: makeSelectAuthenticated(),
 })
 
-const withConnect = connect(
+export const withConnect = connect(
   mapStateToProps,
   mapDispatchToProps,
 )
 
-const withSaga = injectSaga({ key: 'login', saga, mode: DAEMON })
+export const withSaga = injectSaga({ key: 'login', saga, mode: DAEMON })
 
 export default compose(
   withSaga,
