@@ -52,17 +52,3 @@ describe('mapDispatchToProps', () => {
   })
 })
 
-describe('mapStateToProps', () => {
-  it('should map the state to props', () => {
-    const currentDog = [{ dog: 'Pasta' }]
-
-    const expected = { currentDog }
-
-    const mockState = {
-      currentDog: currentDog,
-    }
-
-    const mappedProps = mapStateToProps(mockState)
-    expect(mappedProps).toEqual(expected)
-  })
-})

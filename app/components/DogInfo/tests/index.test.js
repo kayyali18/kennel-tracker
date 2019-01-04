@@ -18,3 +18,4 @@ describe.skip('<DogInfo />', () => {
     expect(renderedComponent).toExist()
   })
 })
+
