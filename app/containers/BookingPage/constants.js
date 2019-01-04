@@ -12,6 +12,7 @@
 export const POST_OWNER = 'kennel-tracker/App/POST_OWNER'
 export const POST_DOG = 'kennel-tracker/App/POST_DOG'
 export const POST_VET = 'kennel-tracker/App/POST_VET'
-export const POST_SAGA = 'kennel-tracker/App/POST_SAGA'
+export const RUN_POST_SAGA = 'kennel-tracker/App/RUN_POST_SAGA'
 export const POST_SUCCESS = 'kennel-tracker/App/POSTSUCCESS'
 export const POST_ERROR = 'kennel-tracker/App/POST_ERROR'
+export const SET_PATH = 'kennel-tracker/App/SET_PATH'

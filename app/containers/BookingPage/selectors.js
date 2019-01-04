@@ -8,6 +8,9 @@ const selectBooking = state => state.get('booking')
 
 const selectRouter = state => state.get('router')
 
+const makeSelectPath = () =>
+  createSelector(selectBooking, bookingState => bookingState.get('path'))
+
 const makeSelectSuccess = () =>
   createSelector(selectBooking, bookingState => bookingState.get('success'))
 
@@ -31,6 +34,7 @@ const makeSelectLocation = () =>
 export {
   selectBooking,
   selectRouter,
+  makeSelectPath,
   makeSelectError,
   makeSelectSuccess,
   makeSelectLocation,

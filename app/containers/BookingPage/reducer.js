@@ -18,6 +18,7 @@ import {
   POST_OWNER,
   POST_SUCCESS,
   POST_ERROR,
+  SET_PATH,
 } from './constants'
 
 // The initial state of the app
@@ -27,10 +28,14 @@ const initialState = fromJS({
   owner: '',
   dog: '',
   vet: '',
+  path: 'owners',
 })
 
 function bookingReducer(state = initialState, action) {
   switch (action.type) {
+    case SET_PATH:
+      return state.set('path', action.path)
+
     case POST_OWNER:
       return state.set('owner', action.body).set('error', false)
 

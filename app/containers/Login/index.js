@@ -7,10 +7,12 @@ import { compose } from 'redux'
 import { createStructuredSelector } from 'reselect'
 
 import injectSaga from 'utils/injectSaga'
+import injectReducer from 'utils/injectReducer'
 import { DAEMON } from 'utils/constants'
 import { makeSelectAuthenticated } from 'containers/App/selectors'
 import { runTokenSagaWatcher, submitUserCredentials } from './actions'
 import saga from './saga'
+import reducer from './reducer'
 import Wrapper from './Wrapper'
 import Form from './Form'
 import LoginBtn from './LoginBtn'
@@ -114,9 +116,12 @@ const withConnect = connect(
   mapDispatchToProps,
 )
 
+const withReducer = injectReducer({ key: 'login', reducer })
+
 const withSaga = injectSaga({ key: 'login', saga, mode: DAEMON })
 
 export default compose(
+  withReducer,
   withSaga,
   withConnect,
 )(Login)
