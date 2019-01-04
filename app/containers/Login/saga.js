@@ -6,8 +6,8 @@ import { call, put, takeLatest, select } from 'redux-saga/effects'
 import { loginError, loginSuccess } from 'containers/App/actions'
 import { RUN_TOKEN_SAGA } from 'containers/Login/constants'
 import { makeSelectEmail, makeSelectPassword } from 'containers/Login/selectors'
-
 import request from 'utils/request'
+import { clearUserCredentials } from './actions'
 
 /**
  * Api request/response handler
@@ -24,6 +24,7 @@ export function* getToken() {
       'Content-Type': 'application/json',
     },
   }
+  yield put(clearUserCredentials())
 
   try {
     // Call our request helper (see 'utils/request')

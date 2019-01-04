@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+input {
+  display: inline-block;
+  width: 255px;
+  margin: 30px;
+  padding: 50px 0 10px 15px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 25px;
+  color: black;
+  background: none;
+  border: 0;
+  border-radius: 3px;
+  outline: 0;
+  text-indent: 70px;
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus,
+input:active {
+  color: black;
+  text-indent: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+
+  &::-webkit-input-placeholder {
+    color: white;
+  }
+}
+
+.title-login {
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Quicksand', sans-serif;
+}

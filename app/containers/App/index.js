@@ -24,7 +24,12 @@ import GlobalStyle from '../../global-styles'
 
 const AppWrapper = styled.div`
   min-height: 100vh;
-  background: linear-gradient(#ff700b, #ff275f);
+  background-image: url('https://i.imgur.com/M7Oqi6Z.jpg');
+  background-color: #0e0b12;
+  background-size: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 `
 
 export default function App() {
