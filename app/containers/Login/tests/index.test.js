@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import Login, { mapDispatchToProps } from '../index'
 
 const mockStore = configureMockStore()
+
 /* eslint-disable */
 describe('<Login />', () => {
   it('should match snapshot', () => {
@@ -35,6 +36,24 @@ describe('mapDispatchToProps', () => {
 
     const mappedProps = mapDispatchToProps(mockDispatch)
     mappedProps.dispatchSaga()
+
+    expect(mockDispatch).toHaveBeenCalled
+  })
+
+  it('calls dispatch with a submitUserCredentials action when dispatchUser is called', () => {
+    const mockDispatch = jest.fn()
+
+    const mappedProps = mapDispatchToProps(mockDispatch)
+    mappedProps.dispatchUser()
+
+    expect(mockDispatch).toHaveBeenCalled
+  })
+
+  it('calls dispatch with a loginError action when dispatchError is called', () => {
+    const mockDispatch = jest.fn()
+
+    const mappedProps = mapDispatchToProps(mockDispatch)
+    mappedProps.dispatchError()
 
     expect(mockDispatch).toHaveBeenCalled
   })
