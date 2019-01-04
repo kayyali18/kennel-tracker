@@ -4,7 +4,8 @@ exports[`<Div /> should match snapshot 1`] = `
 .c0 {
   display: inline-block;
   width: 250px;
-  border: 2px dashed #595959;
+  background: #e7b7d3;
+  border: 2px dashed black;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;

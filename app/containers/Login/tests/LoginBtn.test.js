@@ -2,16 +2,16 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import 'jest-styled-components'
 
-import Input from '../Input'
+import LoginBtn from '../LoginBtn'
 
-describe('<Input />', () => {
+describe('<LoginBtn />', () => {
   it('should match snapshot', () => {
-    const renderedComponent = renderer.create(<Input />).toJSON()
+    const renderedComponent = renderer.create(<LoginBtn />).toJSON()
     expect(renderedComponent).toMatchSnapshot()
   })
 
-  it('should render an input', () => {
-    const renderedComponent = renderer.create(<Input />).toJSON()
+  it('should render a button', () => {
+    const renderedComponent = renderer.create(<LoginBtn />).toJSON()
     expect(renderedComponent.type).toEqual('input')
   })
 })

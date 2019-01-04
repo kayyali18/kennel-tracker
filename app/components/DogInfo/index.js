@@ -1,6 +1,7 @@
 import React from 'react'
 import { Redirect, Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import Header from 'components/Header'
 import Button from './Button'
 import './DogInfo.css'
 
@@ -11,6 +12,7 @@ const DogInfo = props => {
   } else {
     return (
       <div className="single-dog">
+        <Header />
         <div className="dog-section">
           <div className="text">
             <p className="dog-info dog-info-name">

@@ -9,6 +9,7 @@ import { createStructuredSelector } from 'reselect'
 import injectSaga from 'utils/injectSaga'
 import { DAEMON } from 'utils/constants'
 import { makeSelectAuthenticated } from 'containers/App/selectors'
+import { loginError } from 'containers/App/actions'
 import { runTokenSagaWatcher, submitUserCredentials } from './actions'
 import saga from './saga'
 import Wrapper from './Wrapper'
@@ -33,16 +34,16 @@ export class Login extends React.PureComponent {
     })
   }
 
-  handleSubmit = () => {
-    //fire of saga watcher action
+  handleSubmit = e => {
     const { dispatchSaga, dispatchUser } = this.props
     const { email, password } = this.state
     const user = { email, password }
     dispatchUser(user)
     dispatchSaga()
-
-    //setstate to rerender because react lifecycle sucks
     this.setState({})
+    setTimeout(() => {
+      this.userWarning('loginError', 'login-error-active')
+    }, 500)
   }
 
   userWarning = async (type, warning) => {
@@ -94,27 +95,33 @@ export class Login extends React.PureComponent {
           />
 
           <LoginBtn ref="loginBtn" size="2em" text="Login" />
+          <div className={`login-error-wrapper ${this.state.loginError}`}>
+            <p className="login-error-text">
+              incorrect email/password combination
+            </p>
+          </div>
         </Form>
       </Wrapper>
     )
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   dispatchSaga: () => dispatch(runTokenSagaWatcher()),
   dispatchUser: user => dispatch(submitUserCredentials(user)),
+  dispatchError: error => dispatch(loginError(error)),
 })
 
-const mapStateToProps = createStructuredSelector({
+export const mapStateToProps = createStructuredSelector({
   authenticated: makeSelectAuthenticated(),
 })
 
-const withConnect = connect(
+export const withConnect = connect(
   mapStateToProps,
   mapDispatchToProps,
 )
 
-const withSaga = injectSaga({ key: 'login', saga, mode: DAEMON })
+export const withSaga = injectSaga({ key: 'login', saga, mode: DAEMON })
 
 export default compose(
   withSaga,

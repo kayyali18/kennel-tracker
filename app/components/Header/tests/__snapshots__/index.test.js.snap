@@ -20,23 +20,5 @@ exports[`<Header /> should match snapshot 1`] = `
       values={Object {}}
     />
   </HeaderLink>
-  <HeaderLink
-    to="/calendar"
-  >
-    <FormattedMessage
-      defaultMessage="Calendar"
-      id="app.components.Header.calendar"
-      values={Object {}}
-    />
-  </HeaderLink>
-  <HeaderLink
-    to="/profile"
-  >
-    <FormattedMessage
-      defaultMessage="Search"
-      id="app.components.Header.search"
-      values={Object {}}
-    />
-  </HeaderLink>
 </Wrapper>
 `;

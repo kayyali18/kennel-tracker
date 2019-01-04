@@ -5,12 +5,17 @@ import { shallow } from 'enzyme'
 import 'jest-styled-components'
 
 import DogInfo from '../index'
-import state from './mockData'
+import { mockState } from './mockData'
 
-describe('<DogInfo />', () => {
-  it.skip('should match snapshot', () => {
-    const state = state
-    const renderedComponent = shallow(<DogInfo state={state} />)
+describe.skip('<DogInfo />', () => {
+  it('should match snapshot', () => {
+    console.log(mockState)
+    const renderedComponent = shallow(<DogInfo state={mockState} />)
     expect(renderedComponent).toMatchSnapshot()
   })
+  it('should exist', () => {
+    const renderedComponent = shallow(<DogInfo state={mockState} />)
+    expect(renderedComponent).toExist()
+  })
 })
+

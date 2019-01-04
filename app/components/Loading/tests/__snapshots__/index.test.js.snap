@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should match snapshot 1`] = `
+<Wrapper__DotWrapper>
+  <Dot
+    delay="0s"
+  />
+  <Dot
+    delay=".1s"
+  />
+  <Dot
+    delay=".2s"
+  />
+  <Dot
+    delay=".3s"
+  />
+  <Dot
+    delay=".4s"
+  />
+</Wrapper__DotWrapper>
+`;

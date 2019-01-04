@@ -15,7 +15,6 @@ import styled from 'styled-components'
 import HomePage from 'containers/HomePage/Loadable'
 import BookingPage from 'containers/BookingPage/Loadable'
 import DogInfo from 'components/DogInfo'
-import Calendar from 'containers/Calendar'
 import Login from 'containers/Login'
 import NotFoundPage from 'containers/NotFoundPage/Loadable'
 import './App.css'
@@ -44,7 +43,6 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/dog" component={DogInfo} />
-        <Route exact path="/calendar" component={Calendar} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/booking" component={BookingPage} />
         <Route component={NotFoundPage} />

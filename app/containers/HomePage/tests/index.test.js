@@ -3,20 +3,87 @@
 import React from 'react'
 import { FormattedMessage } from 'react-intl'
 import { shallow } from 'enzyme'
-// import renderer from 'react-test-renderer'
+import { mount } from 'enzyme'
+import renderer from 'react-test-renderer'
+import { compose } from 'redux'
+import configureMockStore from 'redux-mock-store'
+import { Provider } from 'react-redux'
+import runInfoSagaWatcher from '../actions'
+import { mapDispatchToProps, mapStateToProps } from '../index'
+
+const mockStore = configureMockStore()
 
 import HomePage from '../index'
-import messages from '../messages'
 
 describe('<HomePage />', () => {
-  it.skip('should render the page message', () => {
-    const renderedComponent = shallow(<HomePage />)
-    expect(
-      renderedComponent.contains(<FormattedMessage {...messages.header} />),
-    ).toEqual(true)
+  let props
+  it('should match snapshot', () => {
+    const store = mockStore({})
+    const wrapper = shallow(
+      <Provider store={store}>
+        <HomePage />
+      </Provider>,
+    )
+    expect(wrapper).toMatchSnapshot()
   })
-  // it('should match snapshot', () => {
-  //   const renderedComponent = renderer.create(<HomePage />).toJSON()
-  //   expect(renderedComponent).toMatchSnapshot()
-  // })
+  it('should have default state', () => {
+    const store = mockStore({})
+    const defaultState = null
+    const wrapper = shallow(
+      <Provider store={store}>
+        <HomePage />
+      </Provider>,
+    )
+    expect(wrapper.state()).toEqual(defaultState)
+  })
+
+  it('should call handleDogs', async () => {
+    const handleDogs = jest.fn()
+    const store = mockStore({})
+    const defaultState = null
+    const wrapper = shallow(
+      <Provider store={store}>
+        <HomePage />
+      </Provider>,
+    )
+    expect(handleDogs).toHaveBeenCalled
+  })
 })
+
+describe('mapDispatchToProps', () => {
+  it('calls dispatch with a runInfoSagaWatcher action when dispatchSaga is called', () => {
+    const currentDog = { dog: 'Pasta' }
+
+    const mockDispatch = jest.fn()
+    const actionToDispatch = jest.fn()
+
+    const mappedProps = mapDispatchToProps(mockDispatch)
+    mappedProps.dispatchSaga()
+
+    expect(mockDispatch).toHaveBeenCalled
+  })
+})
+
+// describe('handleDogs', () => {
+//   it('should call set state', async () => {
+//     const mockPreventDefault = jest.fn()
+//     const mockEvent = {
+//       target: {
+//         name: 'dog',
+//         value: 'dog',
+//       },
+//       preventDefault: mockPreventDefault,
+//     }
+//     const store = mockStore({})
+//     const defaultState = null
+//     const wrapper = shallow(
+//       <Provider store={store}>
+//         <HomePage />
+//       </Provider>,
+//     )
+//     const expected = 'dog'
+//     await wrapper.instance().handleDogs(mockEvent)
+
+//     expect(wrapper.state().origin).toEqual(expected)
+//   })
+// })

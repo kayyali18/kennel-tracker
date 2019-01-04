@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dot /> should match snapshot 1`] = `
+.c0 {
+  background-color: black;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin: 0 15px;
+  -webkit-animation: bJUCIX 1s ease-in infinite;
+  animation: bJUCIX 1s ease-in infinite;
+}
+
+<div
+  className="c0"
+/>
+`;
