@@ -28,4 +28,5 @@ export default BookingForm
 BookingForm.propTypes = {
   handleSubmit: PropTypes.func,
   mounted: PropTypes.bool,
+  stage: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 }
