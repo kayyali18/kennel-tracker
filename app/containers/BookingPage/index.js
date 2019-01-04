@@ -21,6 +21,7 @@ import {
   makeSelectData,
 } from 'containers/App/selectors'
 // import Loading from 'components/Loading'
+import Header from 'components/Header'
 import Wrapper from './Wrapper'
 import { loadApi } from '../App/actions'
 // import reducer from './reducer'
@@ -37,6 +38,7 @@ export default class BookingPage extends React.PureComponent {
           <title>Booking Page</title>
           <meta name="Booking Page" content="Forms for booking reservations " />
         </Helmet>
+        <Header />
         <BookingForm stage="3" />
       </Wrapper>
     )
