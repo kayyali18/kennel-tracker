@@ -8,6 +8,7 @@ import { RUN_TOKEN_SAGA } from '../constants'
 import runTokenSaga, { getToken } from '../saga'
 import { clearUserCredentials } from '../actions'
 
+/* eslint-disable redux-saga/yield-effects prettier-ignore */
 describe('getToken Saga', () => {
   let getTokenGenerator
 
