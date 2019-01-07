@@ -37,30 +37,38 @@
 //       stage: 1,
 //       stageNames: ['owners', 'pets', 'vets'],
 //       path: 'owners',
+//       dog: {},
+//       owner: {},
+//       vet: {},
 //     }
 //   }
 
 //   componentDidUpdate(prevProps, prevState) {
 //     // Typical usage (don't forget to compare props):
-//     const { dispatchSaga, dispatchPath } = this.props
+//     const { dispatchSaga, dispatchOwner, dispatchDog, dispatchVet } = this.props
+//     const { dog, owner, vet } = this.state
 
-//     // if (this.props.userID !== prevProps.userID) {
-//     //   this.fetchData(this.props.userID);
-//     //   dispatchSaga()
-//     // }
+//     if (dog !== prevState.dog) dispatchDog(dog)
+//     if (owner !== prevState.owner) dispatchOwner(owner)
+//     if (vet !== prevState.vet) dispatchVet(vet)
+//     // dispatchSaga()
 //   }
 
 //   saveForm = inputs => {
 //     const { dispatchSaga, dispatchPath } = this.props
 //     let { stage, stageNames } = this.state
+//     let who
 //     let path = stageNames[stage]
 //     dispatchPath(path)
+//     if (stage === 1) who = 'owner'
+//     if (stage === 2) who = 'dog'
+//     if (stage === 3) who = 'vet'
 
 //     stage += 1
 //     path = stageNames[stage]
 
 //     this.setState({
-//       postData: { ...inputs },
+//       [who]: { ...inputs },
 //       path,
 //       stage,
 //     })
