@@ -33,43 +33,37 @@ class Modal extends React.PureComponent {
         >
           <Input
             handleChange={this.handleChange}
-            id="vet-practice"
+            id="practice_name"
             type="text"
             placeholder="Practice Name"
           />
           <Input
             handleChange={this.handleChange}
-            id="vet-name"
+            id="vet_name"
             type="text"
             placeholder="Vet's Name"
           />
           <Input
             handleChange={this.handleChange}
-            id="vet-address"
+            id="address"
             type="text"
             placeholder="Address"
           />
           <Input
             handleChange={this.handleChange}
-            id="vet-phone"
+            id="phone"
             type="tel"
             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             placeholder="Phone #"
           />
           <Input
             handleChange={this.handleChange}
-            id="vet-email"
+            id="email"
             type="email"
             placeholder="Email Address"
           />
-          <Input
-            handleChange={this.handleChange}
-            id="vet-shots"
-            type="text"
-            placeholder="Shots due"
-          />
           <button type="submit">
-            Log in <i className="fa fa-fw fa-chevron-right" />
+            Finish! <i className="fa fa-fw fa-chevron-right" />
           </button>
         </form>
       </ModalWrapper>

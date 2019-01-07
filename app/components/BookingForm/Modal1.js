@@ -34,9 +34,15 @@ class Modal extends React.PureComponent {
         >
           <Input
             handleChange={this.handleChange}
-            id="name"
+            id="first_name"
             type="text"
-            placeholder="Name"
+            placeholder="First Name"
+          />
+          <Input
+            handleChange={this.handleChange}
+            id="last_name"
+            type="text"
+            placeholder="Last Name"
           />
           <Input
             handleChange={this.handleChange}
@@ -46,16 +52,17 @@ class Modal extends React.PureComponent {
           />
           <Input
             handleChange={this.handleChange}
-            id="home-phone"
-            type="tel"
-            placeholder="Home Telephone"
-          />
-          <Input
-            handleChange={this.handleChange}
-            id="cell-phone"
+            id="cell_phone"
             type="tel"
             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             placeholder="Cellphone"
+          />
+          <Input
+            handleChange={this.handleChange}
+            id="home_phone"
+            type="tel"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            placeholder="Emergency Contact #"
           />
           <Input
             handleChange={this.handleChange}
@@ -63,14 +70,8 @@ class Modal extends React.PureComponent {
             type="email"
             placeholder="E-mail"
           />
-          <Input
-            handleChange={this.handleChange}
-            id="e-phone"
-            type="tel"
-            placeholder="Emergency Contact #"
-          />
           <button type="submit">
-            Log in <i className="fa fa-fw fa-chevron-right" />
+            Next <i className="fa fa-fw fa-chevron-right" />
           </button>
         </form>
       </ModalWrapper>
