@@ -26,7 +26,12 @@ import {
   setPath,
 } from './actions'
 import reducer from './reducer'
-import { makeSelectPath } from './selectors'
+import {
+  makeSelectPath,
+  makeSelectDog,
+  makeSelectOwner,
+  makeSelectVet,
+} from './selectors'
 
 /* eslint-disable react/prefer-stateless-function */
 
@@ -36,25 +41,42 @@ export class BookingPage extends React.PureComponent {
     this.state = {
       stage: 1,
       stageNames: ['owners', 'pets', 'vets'],
-      path: 'owners',
+      dog: {},
+      owner: {},
+      vet: {},
     }
   }
 
-  saveForm = inputs => {
-    const { dispatchSaga, dispatchPath } = this.props
-    let { stage, stageNames } = this.state
-    let path = stageNames[stage]
+  componentDidUpdate(prevProps, prevState) {
+    const { dispatchSaga, dispatchOwner, dispatchDog, dispatchVet } = this.props
+    const { dog, owner, vet } = this.state
+
+    if (dog !== prevState.dog) dispatchDog(dog)
+    if (owner !== prevState.owner) dispatchOwner(owner)
+    if (vet !== prevState.vet) dispatchVet(vet)
     dispatchSaga()
+  }
+
+  saveForm = inputs => {
+    const { dispatchPath } = this.props
+    const { stageNames } = this.state
+    let { stage } = this.state
+    let who
+    let path = stageNames[stage - 1]
+
+    // Update redux store
     dispatchPath(path)
+
+    // who are we updating in state
+    if (stage === 1) who = 'owner'
+    if (stage === 2) who = 'dog'
+    if (stage === 3) who = 'vet'
 
     stage += 1
     path = stageNames[stage]
 
-    // dispatchSaga()
-
     this.setState({
-      postData: { ...inputs },
-      path,
+      [who]: { ...inputs },
       stage,
     })
   }
@@ -84,6 +106,9 @@ export const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = createStructuredSelector({
   path: makeSelectPath(),
+  owner: makeSelectOwner(),
+  vet: makeSelectVet(),
+  dog: makeSelectDog(),
 })
 
 const withConnect = connect(
@@ -99,3 +124,11 @@ export default compose(
   withSaga,
   withConnect,
 )(BookingPage)
+
+BookingPage.propTypes = {
+  dispatchSaga: PropTypes.func,
+  dispatchDog: PropTypes.func,
+  dispatchVet: PropTypes.func,
+  dispatchOwner: PropTypes.func,
+  dispatchPath: PropTypes.func,
+}

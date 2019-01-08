@@ -28,7 +28,7 @@ const initialState = fromJS({
   owner: '',
   dog: '',
   vet: '',
-  path: 'owners',
+  path: '',
 })
 
 function bookingReducer(state = initialState, action) {

@@ -22,7 +22,7 @@ const ModalWrapper = styled.div`
 
   button {
     align-items: center;
-    background: #dd403a;
+    background: #2a945e;
     border: 0;
     border-radius: 3px;
     color: white;

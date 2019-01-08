@@ -113,7 +113,7 @@ export function postError(error) {
  *
  * @param {object} response A response object indicating successfull POST
  *
- * @return {object} An action object with a type of POST_SUCCESS setting authentication to true
+ * @return {object} An action object with a type of POST_SUCCESS passing the response
  */
 
 export function postSuccess(response) {

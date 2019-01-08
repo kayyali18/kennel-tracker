@@ -17,7 +17,7 @@ class Modal extends React.PureComponent {
   }
 
   handleSubmit = () => {
-    this.props.onSubmit({ ...this.state, stage: 2 })
+    this.props.onSubmit({ ...this.state })
   }
 
   render() {
@@ -34,9 +34,15 @@ class Modal extends React.PureComponent {
         >
           <Input
             handleChange={this.handleChange}
-            id="petName"
+            id="name"
             type="text"
             placeholder="Pet Name"
+          />
+          <Input
+            handleChange={this.handleChange}
+            id="species"
+            type="text"
+            placeholder="Species"
           />
           <Input
             handleChange={this.handleChange}
@@ -52,31 +58,36 @@ class Modal extends React.PureComponent {
           />
           <Input
             handleChange={this.handleChange}
-            id="DOB"
+            id="dob"
             type="date"
             data-placeholder="Date of Birth"
           />
-          <select id="matingAbility" onChange={this.handleChange}>
-            <option>-- Please Select an Option --</option>
-            <option>Spayed</option>
-            <option>Neutered</option>
-            <option>None</option>
+          <select id="spayed_neutered" required onChange={this.handleChange}>
+            <option value="">-- Please Select an Option --</option>
+            <option value>Spayed/Neutered</option>
+            <option value={false}>N/A</option>
           </select>
           <Input
             handleChange={this.handleChange}
-            id="medication"
+            id="medications"
             type="text"
             placeholder="Medications"
           />
           <Input
             handleChange={this.handleChange}
-            id="feeding"
+            id="feeding_instructions"
             type="text"
             placeholder="Feeding Instructions"
           />
+          <Input
+            handleChange={this.handleChange}
+            id="shots"
+            type="text"
+            placeholder="Shots"
+          />
 
           <button type="submit">
-            Log in <i className="fa fa-fw fa-chevron-right" />
+            Next <i className="fa fa-fw fa-chevron-right" />
           </button>
         </form>
       </ModalWrapper>

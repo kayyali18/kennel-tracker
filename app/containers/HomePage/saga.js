@@ -13,13 +13,14 @@ import request from 'utils/request'
  * Api request/response handler
  */
 export function* getRunInfo() {
+  const token = JSON.parse(localStorage.getItem('token'))
+
   // Select query from store
   const requestURL = `https://kennel-staging.herokuapp.com/api/v1/reservations/current`
   const optionsObj = {
     method: 'GET',
     headers: {
-      Authorization:
-        'Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoxLCJleHAiOjE1NDcxMDM4MTF9.YDq4GlviuBIewD0MWcx8BDcEiSPtNJy8VS0HvQNIjk0',
+      Authorization: `Bearer ${token}`,
     },
   }
 
