@@ -5,7 +5,9 @@
 Kennel Tracker is a web application designed to allow kennel business owners to keep track of current reservations. Users can create and update current reservations, search for new and existing customers, and have pet, vet, and owner information easily organized in one place. 
 
 This web application uses an API created using Ruby on Rails. Documentation can be found here: 
-https://github.com/mikecm1141/kennel_tracker_be
+[here](https://github.com/mikecm1141/kennel_tracker_be)
+
+Deployed on Heroku: [here](https://kennel-tracker.herokuapp.com/)
 
 ## Installation
 
@@ -22,6 +24,12 @@ install the dependencies:
 start the server: 
 
 ```` npm start ````
+
+## Testing
+
+To run our test suite:
+
+```` npm run test ````
 
 ### Technologies and Resources Used For Front End
 * React.js
