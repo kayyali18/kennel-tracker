@@ -61,11 +61,11 @@ To run our test suite:
 
 ## Contibutors 
 
-#### Laura Shamus - Frontend Developer
+#### [Laura Shamus](https://github.com/lkshamus) - Frontend Developer
 
-#### Ahmad Kayyali - Frontend Developer
+#### [Ahmad Kayyali](https://github.com/kayyali18) - Frontend Developer
 
-#### Jesse Ling - Backend Developer
+#### [Jesse Ling](https://github.com/jling88) - Backend Developer
 
-#### Mike McKee - Backend Developer
+#### [Mike McKee](https://github.com/mikecm1141) - Backend Developer
 
