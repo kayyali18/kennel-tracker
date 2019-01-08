@@ -17,7 +17,7 @@ class Modal extends React.PureComponent {
   }
 
   handleSubmit = () => {
-    this.props.onSubmit({ ...this.state, stage: 2 })
+    this.props.onSubmit({ ...this.state })
   }
 
   render() {
